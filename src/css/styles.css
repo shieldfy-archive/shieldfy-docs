@@ -308,6 +308,7 @@ select {
 /* ====== Header ====== */
 .header {
   background: #494d55;
+  background: rgba(0, 0, 0, 0) linear-gradient(180deg, #130e21, #1b1942) repeat scroll 0 0;
   color: rgba(255, 255, 255, 0.85);
   border-top: 5px solid #40babd;
   padding: 30px 0;
@@ -1265,3 +1266,16 @@ select {
 /* Small devices (tablets, 768px and up) */
 /* Medium devices (desktops, 992px and up) */
 /* Large devices (large desktops, 1200px and up) */
+
+
+.frameworks svg{
+  max-width:90%;
+  margin:0 10px;
+}
+.frameworks a{
+  text-align: center;
+}
+.frameworks a span{
+  font-size: 18px;
+  display: block;
+}
