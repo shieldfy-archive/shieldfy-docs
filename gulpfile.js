@@ -9,6 +9,7 @@ var injectPartials = require('gulp-inject-partials');
 gulp.task('css', function () {
 	// Source CSS file, bundle in 1 file.
     var cssFiles = [
+        'src/plugins/bootstrap/css/bootstrap.min.css',
         'src/css/styles.css',
         'src/css/app.css'
     ];
@@ -41,14 +42,14 @@ gulp.task('plugins', function () {
         'src/plugins/*/*/*/*'
     ];
 
-    gulp.src(fontFiles)
-        .pipe(expect(fontFiles))
+    gulp.src(pluginsFiles)
+        .pipe(expect(pluginsFiles))
         .pipe(gulp.dest('./public/assets/plugins/'));
 });
 
 gulp.task('fonts', function () {
     var fontFiles = [
-        'bower_components/bootstrap/dist/fonts/*.*',
+        //'bower_components/bootstrap/dist/fonts/*.*',
         'bower_components/font-awesome/fonts/*.*'
     ];
 
@@ -59,8 +60,8 @@ gulp.task('fonts', function () {
 
 gulp.task('imgs', function () {
     var imgsFiles = [
-        'src/img/*',
-        'src/img/*/*'
+        'src/imgs/*',
+        'src/imgs/*/*'
     ];
 
     gulp.src(imgsFiles)

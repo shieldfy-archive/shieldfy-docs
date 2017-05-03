@@ -9,7 +9,7 @@
   "homepage": "",
   "private": true,
   "dependencies": {
-    "font-awesome":"^4.6.1",
+    "font-awesome":"^4.6.1"
   },
   "ignore": [
     "**/.*",
