@@ -38,7 +38,7 @@
                     <h1 class="logo">
                         <a href="index.html">
                             <span aria-hidden="true" class="icon_documents_alt icon"></span>
-                            <span class="text-highlight">Pretty</span><span class="text-bold">Docs</span>
+                            <span class="text-highlight">Shieldfy</span><span class="text-bold">Docs</span>
                         </a>
                     </h1>
                 </div><!--//branding-->
@@ -52,7 +52,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><i class="icon fa fa-paper-plane"></i> Quick Start</h1>
-                    <div class="meta"><i class="fa fa-clock-o"></i> Last updated: Jan 25th, 2016</div>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Last updated: May 3rd, 2017</div>
                 </div><!--//doc-header-->
 
                  <div class="doc-body">
@@ -80,7 +80,7 @@
                                 <div id="lang-php"  class="section-block">
                                     <div class="row frameworks">
                                         <div class="col-md-2 col-sm-3 col-xs-3">
-                                            <a href="#laravel-php">
+                                            <a  class="scrollto" href="#laravel-php">
                                                 <svg id="php-laravel" preserveAspectRatio="xMinYMin meet"  version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 54">
                                                     <g xmlns="http://www.w3.org/2000/svg" id="php-laravel">	
                                                         <polygon style="fill:#FB503B"  points="45.936,39.784 22.965,53.045 0,39.784 0,13.261 22.965,0 45.936,13.261"></polygon>
@@ -91,7 +91,7 @@
                                             </a>
                                         </div>
                                         <div class="col-md-2 col-sm-3 col-xs-3">
-                                            <a href="#symfony-php">
+                                            <a  class="scrollto" href="#symfony-php">
                                                 <svg id="php-symfony" preserveAspectRatio="xMinYMin meet" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 54">
                                                     <g xmlns="http://www.w3.org/2000/svg" id="php-symfony" data-size="47x54" >	
                                                         <polygon style="fill:#000000" points="46.037,39.871 23.015,53.161 0,39.871 0,13.29 23.015,0 46.037,13.29 	"></polygon>
@@ -102,7 +102,7 @@
                                             </a>
                                         </div>
                                         <div class="col-md-2 col-sm-3 col-xs-3">
-                                            <a href="#codeigniter-php">
+                                            <a  class="scrollto" href="#codeigniter-php">
                                                 <svg id="php-codeigniter" preserveAspectRatio="xMinYMin meet" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 54">
                                                     <g xmlns="http://www.w3.org/2000/svg" id="php-codeigniter" data-size="47x54" >	
                                                         <polygon style="fill:#EE4323" points="46.037,39.871 23.015,53.161 0,39.871 0,13.29 23.015,0 46.037,13.29 	"></polygon>
@@ -114,7 +114,7 @@
                                         </div>
                                         
                                         <div class="col-md-2 col-sm-3 col-xs-3">
-                                            <a href="generic-php">
+                                            <a  class="scrollto" href="#generic-php">
                                                 <svg id="php-generic" preserveAspectRatio="xMinYMin meet" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 54">
                                                     <g xmlns="http://www.w3.org/2000/svg" id="php-generic" data-size="47x54" >	
                                                         <polygon style="fill:#333333" points="46.037,39.871 23.015,53.161 0,39.871 0,13.29 23.015,0 46.037,13.29 	"></polygon>
@@ -186,19 +186,10 @@ $guard = Guard::init([
 <h4>If you are using PDO , attach the object to Shieldfy guard</h4>
 <pre><code class="language-php">
 &lt;?php 
-$guard->attachDB($pdo);
+$pdo = $guard->attachDB($pdo);
 </code></pre>
 
 
-<div class="callout-block callout-warning">
-    <div class="icon-holder">
-        <i class="fa fa-info-circle"></i>
-    </div><!--//icon-holder-->
-    <div class="content">
-        <h4 class="callout-title">Attach DB Object</h4>
-        <p>When using generic SDK you must attach your DB object in order to protect the DB layer , refer to Advanced Configurations for more details </p>
-    </div><!--//content-->
-</div>
 
 <hr />
 <h3>Install it without composer (BETA)</h3>
@@ -216,7 +207,7 @@ $guard = Shieldfy\Guard::init([
 <h4>If you are using PDO , attach the object to Shieldfy guard</h4>
 <pre><code class="language-php">
 &lt;?php 
-$guard->attachDB($pdo);
+$pdo = $guard->attachDB($pdo);
 </code></pre>
 
 
@@ -326,7 +317,7 @@ Guard::init([
     <footer id="footer" class="footer text-center">
         <div class="container">
             <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com/" targe="_blank">Xiaoying Riley</a> for developers</small>
+            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com/" rel="nofollow" target="_blank">Xiaoying Riley</a> Improved by Shieldfy Team</small>
         </div><!--//container-->
     </footer><!--//footer-->
      

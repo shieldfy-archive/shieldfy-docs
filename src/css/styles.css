@@ -1279,3 +1279,7 @@ select {
   font-size: 18px;
   display: block;
 }
+
+.logo img{
+  width: 250px;
+}

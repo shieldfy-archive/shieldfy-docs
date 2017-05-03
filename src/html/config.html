@@ -38,7 +38,7 @@
                     <h1 class="logo">
                         <a href="index.html">
                             <span aria-hidden="true" class="icon_documents_alt icon"></span>
-                            <span class="text-highlight">Pretty</span><span class="text-bold">Docs</span>
+                            <span class="text-highlight">Shieldfy</span><span class="text-bold">Docs</span>
                         </a>
                     </h1>
                 </div><!--//branding-->
@@ -52,7 +52,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><i class="icon icon_puzzle_alt"></i> Advanced Configurations</h1>
-                    <div class="meta"><i class="fa fa-clock-o"></i> Last updated: Jan 25th, 2016</div>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Last updated: May 3rd, 2017</div>
                 </div><!--//doc-header-->
 
                  <div class="doc-body">
@@ -230,18 +230,36 @@ $guard = Shieldfy\Guard::init([
                             <section id="callbacks" class="doc-section">
                                 <h2 class="section-title">Callbacks</h2>
                                 
+                                <p>Shieldfy communitcate back to the SDK in three different callbacks Health check &amp; Logs grabbing &amp; Update for rules</p>
+                                <p>All Callback communication is encrypted and done over ssl if available.</p>
+
                                 <div id="health-check-callback"  class="section-block">
                                     <h3 class="block-title">Health Check Callback</h3>
+                                    <p>Health check callback is just a ping to your website , the SDK catch the request and response with the status : ok and the version of the SDK</p>
+                                    <p>When we got the right response we know its all ok , but if we don't we know something not right. so we can address the issue quickly with you.</p>
+
                                 </div>
 
                                 <div id="logs-callback"  class="section-block">
                                     <h3 class="block-title">Logs Callback</h3>
+                                    <p>Shieldfy SDK produce number of log files when something went wrong or when needs to store some SDK related info, and don't interrupt the user expirience in any way .</p>
+                                    <p>So this logs is an indicator of how the sdk works so we can improve it</p>
+                                    <div class="callout-block callout-warning">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-info-circle"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">Logs Privacy</h4>
+                                            <p>All logs will be a package related logs , mostly errors and notices for the package preformance , it will not include any users info or other info consider private.</p>
+                                        </div><!--//content-->
+                                    </div>
                                 </div>
 
                                 <div id="update-callback"  class="section-block">
                                     <h3 class="block-title">Update Callback</h3>
+                                    <p>This is a very important callback although shieldfy rely on so many metrics to identify attacks , Shieldfy still uses some rules at the heart of attack identification process .</p>
+                                    <p>The callback will be triggered if we release a new update in the application/attacks rules , so your application be up to date with the security automatically.</p>
                                 </div>
-
                             </section>
 
 
@@ -250,18 +268,22 @@ $guard = Shieldfy\Guard::init([
                                 
                                 <div id="debug"  class="section-block">
                                     <h3 class="block-title">How to debug Shieldfy SDK</h3>
+                                    <p> Docs In Progress ... </p>
                                 </div>
 
                                 <div id="reading-logs"  class="section-block">
                                     <h3 class="block-title">Reading Logs</h3>
+                                    <p> Docs In Progress ... </p>
                                 </div>
 
                                 <div id="internals"  class="section-block">
                                     <h3 class="block-title">Internal Functions / Classes</h3>
+                                    <p> Docs In Progress ... </p>
                                 </div>
 
                                 <div id="monitors"  class="section-block">
                                     <h3 class="block-title">Enable / Disable Monitors</h3>
+                                    <p> Docs In Progress ... </p>
                                 </div>
 
                             </section>
@@ -325,7 +347,7 @@ $guard = Shieldfy\Guard::init([
     <footer id="footer" class="footer text-center">
         <div class="container">
             <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com/" targe="_blank">Xiaoying Riley</a> for developers</small>
+            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com/" rel="nofollow" target="_blank">Xiaoying Riley</a> Improved by Shieldfy Team</small>
         </div><!--//container-->
     </footer><!--//footer-->
      
