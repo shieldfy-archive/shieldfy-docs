@@ -139,10 +139,12 @@
     Shieldfy\ShieldfyLaravelClient\ShieldfyServiceProvider::class,
 ],
 </code></pre>
+<h4>Publish shieldfy configurations</h4>
+<pre>$ php artisan vendor:publish </pre>
 <h4>don't forget to add your api key, api secret in your <code>.env</code> file</h4>
 <pre><code class="language-php">
-SHIELDFY_APP_KEY={{request()->app->uid}}
-SHIELDFY_APP_SECRET={{request()->app->secret}}
+SHIELDFY_APP_KEY=APP_KEY
+SHIELDFY_APP_SECRET=APP_KEY
 </code></pre>
 <h4>Finally add shieldfy global middleware in  <code>app/Http/Kernel.php</code></h4>
 <pre><code class="language-php">
@@ -189,26 +191,6 @@ $guard = Guard::init([
 $pdo = $guard->attachDB($pdo);
 </code></pre>
 
-
-
-<hr />
-<h3>Install it without composer (BETA)</h3>
-<p>its highly recommended to use composer for installing packages : <a href="https://getcomposer.org/">What is composer ?</a></p>
-<p>But you still can install and use shieldfy without composer</p>
-<h4>Download the package from here <a href="https://github.com/shieldfy/shieldfy-php-client/archive/standalone.zip">Standalone version</a></h4>
-<pre><code class="language-php">
-require_once 'path/to/ShieldfyAutoloader.php';
-$guard = Shieldfy\Guard::init([
-    'app_key'=&gt;'APP_KEY',
-    'app_secret'=&gt;'APP_SECRET',
-])->catchCallbacks(); 
-</code></pre>
-
-<h4>If you are using PDO , attach the object to Shieldfy guard</h4>
-<pre><code class="language-php">
-&lt;?php 
-$pdo = $guard->attachDB($pdo);
-</code></pre>
 
 
                                 </div>
