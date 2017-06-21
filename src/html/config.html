@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
     <title>Developers Documentation | Shieldfy SDK</title>
     <!-- Meta -->
@@ -9,16 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">    
-    <link rel="shortcut icon" href="favicon.ico">  
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
-    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="assets/plugins/prism/prism.css">
     <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
-    
+
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/app.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -26,8 +26,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-</head> 
+
+</head>
 
 <body class="body-orange">
     <div class="page-wrapper">
@@ -58,14 +58,14 @@
                  <div class="doc-body">
                     <div class="doc-content">
                         <div class="content-inner">
-                            
+
                             <section id="basic-configurations-section" class="doc-section">
                                 <h2 class="section-title">Basic Configurations</h2>
 
                                 <div id="api-keys"  class="section-block">
                                     <h3 class="block-title">Api Keys</h3>
                                     <p>
-                                        First step is to create an account <a href="https://app.shieldfy.io/signup">here</a> and create your first application , so you will get your APP Key &amp; APP Secret. 
+                                        First step is to create an account <a href="https://app.shieldfy.io/signup">here</a> and create your first application , so you will get your APP Key &amp; APP Secret.
                                     </p>
                                     <div class="callout-block callout-danger">
                                         <div class="icon-holder">
@@ -75,26 +75,26 @@
                                             <h4 class="callout-title">Note about keys</h4>
                                             <p>Your App Secret should be strictly confidential, don't share it with any one or posting it public at any way. </p>
                                         </div><!--//content-->
-                                    </div>                                    
+                                    </div>
                                 </div>
 
                                 <div id="action-response"  class="section-block">
                                     <h3 class="block-title">Action / Response</h3>
                                     <p>Shieldfy lets you control the action should the package do when spotting dangerous activities </p>
                                 <p>Available Actions: ( Block | Listen ) the default action is block will block the dangerous activities , the other action listen will record the threat and notify you but will not block the request and will let the user continue to your application. </p>
-<pre><code class="language-php">&lt;?php 
+<pre><code class="language-php">&lt;?php
 use Shieldfy\Guard;
 Guard::init([
         'app_key'=&gt;'APP_KEY',
         'app_secret'=&gt;'APP_SECRET',
         'action'=&gt;'listen' //default is block
-])->catchCallbacks(); 
+])->catchCallbacks();
 </code></pre>
                                 </div>
 
                                 <div id="headers"  class="section-block">
                                     <h3 class="block-title">Headers Control</h3>
-                                    
+
                                     <p>For security reasons Shieldfy expose number of headers to enforce some security practices.</p>
                                 <p>
                                     The headers exposed by default
@@ -109,7 +109,7 @@ Guard::init([
                                     If for some reason you don't want this headers to be exposed or you want to expose another value for it, you can control it. Just pass array for the headers and pass the changed value or false if you want to disable it completely.
                                 </p>
 
-<pre><code class="language-php">&lt;?php 
+<pre><code class="language-php">&lt;?php
 use Shieldfy\Guard;
 Guard::init([
         'app_key'=&gt;'APP_KEY',
@@ -118,11 +118,11 @@ Guard::init([
             'X-Frame-Options' => 'DENY', //this header value will be DENY
             'X-XSS-Protection' => false //this header will not be shown
         ]
-])->catchCallbacks(); 
-</code></pre> 
+])->catchCallbacks();
+</code></pre>
 
                                 </div>
-                             
+
                             </section>
 
                             <section id="using-cache" class="doc-section">
@@ -133,7 +133,7 @@ Guard::init([
                                 <div id="filecache"  class="section-block">
                                     <h3 class="block-title">File Cache</h3>
                                     <p>You can use file cache easily be setting up Shieldfy Cache manager</p>
-<pre><code class="language-php">&lt;?php 
+<pre><code class="language-php">&lt;?php
 use Shieldfy\Guard;
 use Shieldfy\Cache\CacheManager;
 
@@ -145,14 +145,14 @@ $cache = $cache->setDriver('file', [
 $guard = Shieldfy\Guard::init([
     'app_key'=&gt;'APP_KEY',
     'app_secret'=&gt;'APP_SECRET',
-],$cache)->catchCallbacks(); 
+],$cache)->catchCallbacks();
 </code></pre>
                                 </div>
 
                                 <div id="memcached"  class="section-block">
                                     <h3 class="block-title">Memcached</h3>
                                     <p>If you are using Memcached , you can configure shieldfy to work with Memcached</p>
-<pre><code class="language-php">&lt;?php 
+<pre><code class="language-php">&lt;?php
 use Shieldfy\Guard;
 use Shieldfy\Cache\CacheManager;
 
@@ -166,7 +166,7 @@ $cache = $cache->setDriver('memcached', [
 $guard = Shieldfy\Guard::init([
     'app_key'=&gt;'APP_KEY',
     'app_secret'=&gt;'APP_SECRET',
-],$cache)->catchCallbacks(); 
+],$cache)->catchCallbacks();
 </code></pre>
 
 
@@ -176,7 +176,7 @@ $guard = Shieldfy\Guard::init([
                                     <h3 class="block-title">Build your own cache</h3>
                                     <p>If you want to use your own custom cache for shieldfy for example using redis or custom mongodb collection .. etc , you can extend the driver from Cache manager</p>
                                     <p>First you need to create a class implements CacheInterface</p>
-<pre><code class="language-php">&lt;?php 
+<pre><code class="language-php">&lt;?php
 namespace MyOwnApp\Cache;
 use Shieldfy\Cache\CacheInterface;
 
@@ -209,7 +209,7 @@ class MyOwnCustomCache implements CacheInterface
 
                                     <p>Then setup the Cachemanager to use your <code>MyOwnCustomCache</code class</p>
 
-<pre><code class="language-php">&lt;?php 
+<pre><code class="language-php">&lt;?php
 use Shieldfy\Guard;
 use Shieldfy\Cache\CacheManager;
 
@@ -219,7 +219,7 @@ $cache = $cache->extendDriver(\MyOwnApp\Cache\MyOwnCustomCacheMyOwnCustomCache::
 $guard = Shieldfy\Guard::init([
     'app_key'=&gt;'APP_KEY',
     'app_secret'=&gt;'APP_SECRET',
-],$cache)->catchCallbacks(); 
+],$cache)->catchCallbacks();
 </code></pre>
 
 
@@ -229,7 +229,7 @@ $guard = Shieldfy\Guard::init([
 
                             <section id="callbacks" class="doc-section">
                                 <h2 class="section-title">Callbacks</h2>
-                                
+
                                 <p>Shieldfy communitcate back to the SDK in three different callbacks Health check &amp; Logs grabbing &amp; Update for rules</p>
                                 <p>All Callback communication is encrypted and done over ssl if available.</p>
 
@@ -265,7 +265,7 @@ $guard = Shieldfy\Guard::init([
 
                             <section id="debug-extending" class="doc-section">
                                 <h2 class="section-title">Debug &amp; Extending</h2>
-                                
+
                                 <div id="debug"  class="section-block">
                                     <h3 class="block-title">How to debug Shieldfy SDK</h3>
                                     <p> Docs In Progress ... </p>
@@ -288,7 +288,7 @@ $guard = Shieldfy\Guard::init([
 
                             </section>
 
-                        
+
                         </div><!--//content-inner-->
                     </div><!--//doc-content-->
                     <div class="doc-sidebar hidden-xs">
@@ -298,67 +298,67 @@ $guard = Shieldfy\Guard::init([
                                     <a class="scrollto" href="#basic-configurations-section">Basic Configurations</a>
                                     <ul class="nav doc-sub-menu">
                                         <li><a class="scrollto" href="#api-keys">Api Keys</a></li>
-                                        <li><a class="scrollto" href="#action-response">Action / Response</a></li>                                       
-                                        <li><a class="scrollto" href="#headers">Headers Control</a></li>                                       
+                                        <li><a class="scrollto" href="#action-response">Action / Response</a></li>
+                                        <li><a class="scrollto" href="#headers">Headers Control</a></li>
                                     </ul><!--//nav-->
                                 </li>
 
                                 <li>
                                     <a class="scrollto" href="#using-cache">Using Cache</a>
                                     <ul class="nav doc-sub-menu">
-                                        <li><a class="scrollto" href="#filecache">File Cache</a></li>                                       
-                                        <li><a class="scrollto" href="#memcached">Memcahed Cache</a></li>                                       
-                                        <li><a class="scrollto" href="#build-your-own-cache">Build your own Cache</a></li>                                       
+                                        <li><a class="scrollto" href="#filecache">File Cache</a></li>
+                                        <li><a class="scrollto" href="#memcached">Memcahed Cache</a></li>
+                                        <li><a class="scrollto" href="#build-your-own-cache">Build your own Cache</a></li>
                                     </ul><!--//nav-->
                                 </li>
 
                                 <li>
                                     <a class="scrollto" href="#callbacks">Callbacks</a>
                                     <ul class="nav doc-sub-menu">
-                                        <li><a class="scrollto" href="#health-check-callback">Health Check Callback</a></li>                                        
-                                        <li><a class="scrollto" href="#logs-callback">Logs Callback</a></li>                                       
-                                        <li><a class="scrollto" href="#update-callback">Update Callback</a></li>                                       
+                                        <li><a class="scrollto" href="#health-check-callback">Health Check Callback</a></li>
+                                        <li><a class="scrollto" href="#logs-callback">Logs Callback</a></li>
+                                        <li><a class="scrollto" href="#update-callback">Update Callback</a></li>
                                     </ul><!--//nav-->
                                 </li>
 
                                 <li>
                                     <a class="scrollto" href="#debug-extending">Debug &amp; Extending</a>
                                     <ul class="nav doc-sub-menu">
-                                        <li><a class="scrollto" href="#debug">How to debug Shieldfy SDK</a></li> 
-                                        <li><a class="scrollto" href="#reading-logs">Reading Logs</a></li>                                       
-                                        <li><a class="scrollto" href="#internals">Internal Functions / Classes </a></li>                                       
-                                        <li><a class="scrollto" href="#monitors">Enable / Disable Monitors</a></li>                                       
+                                        <li><a class="scrollto" href="#debug">How to debug Shieldfy SDK</a></li>
+                                        <li><a class="scrollto" href="#reading-logs">Reading Logs</a></li>
+                                        <li><a class="scrollto" href="#internals">Internal Functions / Classes </a></li>
+                                        <li><a class="scrollto" href="#monitors">Enable / Disable Monitors</a></li>
                                     </ul><!--//nav-->
                                 </li>
 
                             </ul><!--//doc-menu-->
                         </nav>
                     </div><!--//doc-sidebar-->
-                </div><!--//doc-body-->    
+                </div><!--//doc-body-->
 
 
             </div><!--//container-->
         </div><!--//doc-wrapper-->
-        
-        
-        
+
+
+
     </div><!--//page-wrapper-->
-    
+
     <footer id="footer" class="footer text-center">
         <div class="container">
             <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
             <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com/" rel="nofollow" target="_blank">Xiaoying Riley</a> Improved by Shieldfy Team</small>
         </div><!--//container-->
     </footer><!--//footer-->
-     
-    <!-- Main Javascript -->          
+
+    <!-- Main Javascript -->
     <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
-    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>                                                                
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
-    
+
 </body>
-</html> 
+</html>
 

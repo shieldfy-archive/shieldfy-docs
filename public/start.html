@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
-<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
     <title>Developers Documentation | Shieldfy SDK</title>
     <!-- Meta -->
@@ -9,16 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">    
-    <link rel="shortcut icon" href="favicon.ico">  
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
-    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="assets/plugins/prism/prism.css">
     <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
-    
+
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/app.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -26,8 +26,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-</head> 
+
+</head>
 
 <body class="body-orange">
     <div class="page-wrapper">
@@ -62,7 +62,7 @@
                                 <h2 class="section-title">Getting Started</h2>
                                 <div class="section-block">
                                     <p>
-                                        First step is to create an account <a href="https://app.shieldfy.io/signup">here</a> and create your first application , so you will get your APP Key &amp; APP Secret. 
+                                        First step is to create an account <a href="https://app.shieldfy.io/signup">here</a> and create your first application , so you will get your APP Key &amp; APP Secret.
                                     </p>
                                     <div class="callout-block callout-danger">
                                         <div class="icon-holder">
@@ -112,7 +112,7 @@
                                                 <span>Codeigniter</span>
                                             </a>
                                         </div>
-                                        
+
                                         <div class="col-md-2 col-sm-3 col-xs-3">
                                             <a  class="scrollto" href="#generic-php">
                                                 <svg id="php-generic" preserveAspectRatio="xMinYMin meet" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47 54">
@@ -123,14 +123,14 @@
                                                 </svg>
                                                 <span>Generic PHP</span>
                                             </a>
-                                        </div> 
+                                        </div>
                                     </div>
                                 </div>
 
 
                                 <h2 class="section-title">Laravel Framework</h2>
                                 <div id="laravel-php"  class="section-block">
-                                    
+
 <pre dir="ltr" style="text-align: left;"><code class="language-bash">$ composer require shieldfy/shieldfy-laravel-client</code></pre>
 <h4>Add Shieldfy to your service provider list in  <code>config/app</code></h4>
 <pre><code class="language-php">
@@ -178,16 +178,16 @@ protected $middleware = [
 <pre><code class="language-bash">$ composer require shieldfy/shieldfy-php-client</code></pre>
 <h4>Use Shieldfy\Guard in the start of your application</h4>
 <pre><code class="language-php">
-&lt;?php 
+&lt;?php
 use Shieldfy\Guard;
 $guard = Guard::init([
     'app_key'=&gt;'APP_KEY',
     'app_secret'=&gt;'APP_SECRET',
-])->catchCallbacks(); 
+])->catchCallbacks();
 </code></pre>
 <h4>If you are using PDO , attach the object to Shieldfy guard</h4>
 <pre><code class="language-php">
-&lt;?php 
+&lt;?php
 $pdo = $guard->attachDB($pdo);
 </code></pre>
 
@@ -200,32 +200,32 @@ $pdo = $guard->attachDB($pdo);
 
 
 
-                           
+
                             <section id="configurations-section" class="doc-section">
                                 <h2 class="section-title">Configurations</h2>
                                 <h3 class="block-title">Debug level</h3>
                                 <p>You can turn debug on/off depend on your needs in the application , the default value is false ( we recommend to leave it false in the production environment )</p>
                                 <p>If debug is false , this will prevent your application to throw errors related to security or bad server response for example .</p>
-<pre><code class="language-php">&lt;?php 
+<pre><code class="language-php">&lt;?php
 use Shieldfy\Guard;
 Guard::init([
         'app_key'=&gt;'APP_KEY',
         'app_secret'=&gt;'APP_SECRET',
         'debug'=&gt;true //default is false
-])->catchCallbacks(); 
+])->catchCallbacks();
 </code></pre>
 
                                 <h3 class="block-title">Threat Response (Action)</h3>
                                 <p>Shieldfy lets you control the action should the package do when spotting dangerous activities </p>
                                 <p>Available Actions: ( Block | Listen ) the default action is block will block the dangerous activities , the other action listen will record the threat and notify you but will not block the request and will let the user continue to your application. </p>
-<pre><code class="language-php">&lt;?php 
+<pre><code class="language-php">&lt;?php
 use Shieldfy\Guard;
 Guard::init([
         'app_key'=&gt;'APP_KEY',
         'app_secret'=&gt;'APP_SECRET',
         'action'=&gt;'listen' //default is block
-])->catchCallbacks(); 
-</code></pre>                                
+])->catchCallbacks();
+</code></pre>
                                 <h3 class="block-title">Overide / Disable Headers</h3>
                                 <p>For security reasons Shieldfy expose number of headers to enforce some security practices.</p>
                                 <p>
@@ -241,7 +241,7 @@ Guard::init([
                                     If for some reason you don't want this headers to be exposed or you want to expose another value for it, you can control it. Just pass array for the headers and pass the changed value or false if you want to disable it completely.
                                 </p>
 
-<pre><code class="language-php">&lt;?php 
+<pre><code class="language-php">&lt;?php
 use Shieldfy\Guard;
 Guard::init([
         'app_key'=&gt;'APP_KEY',
@@ -250,8 +250,8 @@ Guard::init([
             'X-Frame-Options' => 'DENY', //this header value will be DENY
             'X-XSS-Protection' => false //this header will not be shown
         ]
-])->catchCallbacks(); 
-</code></pre> 
+])->catchCallbacks();
+</code></pre>
 
                             </section>
 
@@ -262,23 +262,23 @@ Guard::init([
                             </section>
 
 
-                        
+
                         </div><!--//content-inner-->
                     </div><!--//doc-content-->
                     <div class="doc-sidebar hidden-xs">
                         <nav id="doc-nav">
                             <ul id="doc-menu" class="nav doc-menu" data-spy="affix">
-                                
+
                                 <li>
-                                    <a class="scrollto" href="#start-section"> Getting started </a>                                    
-                                </li>                                
+                                    <a class="scrollto" href="#start-section"> Getting started </a>
+                                </li>
                                 <li>
                                     <a class="scrollto" href="#installation-section">Installation (PHP)</a>
                                     <ul class="nav doc-sub-menu">
-                                        <li><a class="scrollto" href="#laravel-php">Laravel</a></li>                                       
-                                        <li><a class="scrollto" href="#symfony-php">Symfony</a></li>                                       
-                                        <li><a class="scrollto" href="#codeigniter-php">Codeigniter</a></li>                                       
-                                        <li><a class="scrollto" href="#generic-php">Generic PHP</a></li>                                       
+                                        <li><a class="scrollto" href="#laravel-php">Laravel</a></li>
+                                        <li><a class="scrollto" href="#symfony-php">Symfony</a></li>
+                                        <li><a class="scrollto" href="#codeigniter-php">Codeigniter</a></li>
+                                        <li><a class="scrollto" href="#generic-php">Generic PHP</a></li>
                                     </ul><!--//nav-->
                                 </li>
                                 <li><a class="scrollto" href="#configurations-section">Basic Configurations</a></li>
@@ -286,31 +286,31 @@ Guard::init([
                             </ul><!--//doc-menu-->
                         </nav>
                     </div><!--//doc-sidebar-->
-                </div><!--//doc-body-->    
+                </div><!--//doc-body-->
 
 
             </div><!--//container-->
         </div><!--//doc-wrapper-->
-        
-        
-        
+
+
+
     </div><!--//page-wrapper-->
-    
+
     <footer id="footer" class="footer text-center">
         <div class="container">
             <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
             <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com/" rel="nofollow" target="_blank">Xiaoying Riley</a> Improved by Shieldfy Team</small>
         </div><!--//container-->
     </footer><!--//footer-->
-     
-    <!-- Main Javascript -->          
+
+    <!-- Main Javascript -->
     <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
-    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>                                                                
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
-    
+
 </body>
-</html> 
+</html>
 
