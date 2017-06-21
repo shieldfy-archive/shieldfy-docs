@@ -65,7 +65,7 @@
                                 <div id="api-keys"  class="section-block">
                                     <h3 class="block-title">Api Keys</h3>
                                     <p>
-                                        First step is to create an account <a href="https://app.shieldfy.io/signup">here</a> and create your first application , so you will get your APP Key &amp; APP Secret.
+                                        The first step is to create an account <a href="https://app.shieldfy.io/signup">here</a> and create your first application, so that you can get your APP Key &amp; APP Secret.
                                     </p>
                                     <div class="callout-block callout-danger">
                                         <div class="icon-holder">
@@ -73,15 +73,15 @@
                                         </div><!--//icon-holder-->
                                         <div class="content">
                                             <h4 class="callout-title">Note about keys</h4>
-                                            <p>Your App Secret should be strictly confidential, don't share it with any one or posting it public at any way. </p>
+                                            <p>Your App Secret should be strictly confidential, so don't share it with anyone or post it publicly in any way.</p>
                                         </div><!--//content-->
                                     </div>
                                 </div>
 
                                 <div id="action-response"  class="section-block">
                                     <h3 class="block-title">Action / Response</h3>
-                                    <p>Shieldfy lets you control the action should the package do when spotting dangerous activities </p>
-                                <p>Available Actions: ( Block | Listen ) the default action is block will block the dangerous activities , the other action listen will record the threat and notify you but will not block the request and will let the user continue to your application. </p>
+                                    <p>Shieldfy lets you control the action the package should take when spotting dangerous activities.</p>
+                                    <p>Available Actions: ( Block | Listen ) The default action is block which will block the dangerous activities. The other action listen will record the threat and notify you, but will not block the request and will let the user continue to your application.</p>
 <pre><code class="language-php">&lt;?php
 use Shieldfy\Guard;
 Guard::init([
@@ -128,11 +128,11 @@ Guard::init([
                             <section id="using-cache" class="doc-section">
                                 <h2 class="section-title">Using Cache</h2>
                                 <div  class="section-block">
-                                    <p>Shieldfy SDK rely on cache for tracking users footprints locally on your server , by default shieldfy uses files cache in the sdk folder <code>/path/to/sdk/tmp</code>. But you can change the cache driver or use your own custom cache </p>
+                                    <p>Shieldfy SDK relies on cache for tracking user footprints locally on your server. By default, Shieldfy uses file cache in the SDK folder <code>/path/to/sdk/tmp</code>, but you can change the cache driver or use your own custom cache.</p>
                                 </div>
                                 <div id="filecache"  class="section-block">
                                     <h3 class="block-title">File Cache</h3>
-                                    <p>You can use file cache easily be setting up Shieldfy Cache manager</p>
+                                    <p>You can use file cache easily by setting up the Shieldfy Cache manager.</p>
 <pre><code class="language-php">&lt;?php
 use Shieldfy\Guard;
 use Shieldfy\Cache\CacheManager;
@@ -151,7 +151,7 @@ $guard = Shieldfy\Guard::init([
 
                                 <div id="memcached"  class="section-block">
                                     <h3 class="block-title">Memcached</h3>
-                                    <p>If you are using Memcached , you can configure shieldfy to work with Memcached</p>
+                                    <p>If you are using Memcached, you can configure Shieldfy to work with Memcached.</p>
 <pre><code class="language-php">&lt;?php
 use Shieldfy\Guard;
 use Shieldfy\Cache\CacheManager;
@@ -169,13 +169,12 @@ $guard = Shieldfy\Guard::init([
 ],$cache)->catchCallbacks();
 </code></pre>
 
-
                                 </div>
 
                                 <div id="build-your-own-cache"  class="section-block">
                                     <h3 class="block-title">Build your own cache</h3>
-                                    <p>If you want to use your own custom cache for shieldfy for example using redis or custom mongodb collection .. etc , you can extend the driver from Cache manager</p>
-                                    <p>First you need to create a class implements CacheInterface</p>
+                                    <p>If you want to use your own custom cache for Shieldfy, for example, using redis or custom mongodb collection .. etc, you can extend the driver from Cache manager.</p>
+                                    <p>First you need to create a class implements CacheInterface.</p>
 <pre><code class="language-php">&lt;?php
 namespace MyOwnApp\Cache;
 use Shieldfy\Cache\CacheInterface;
@@ -222,7 +221,6 @@ $guard = Shieldfy\Guard::init([
 ],$cache)->catchCallbacks();
 </code></pre>
 
-
                                 </div>
 
                             </section>
@@ -242,52 +240,50 @@ $guard = Shieldfy\Guard::init([
 
                                 <div id="logs-callback"  class="section-block">
                                     <h3 class="block-title">Logs Callback</h3>
-                                    <p>Shieldfy SDK produce number of log files when something went wrong or when needs to store some SDK related info, and don't interrupt the user expirience in any way .</p>
-                                    <p>So this logs is an indicator of how the sdk works so we can improve it</p>
+                                    <p>Shieldfy SDK produces a number of log files when something goes wrong or when it needs to store some SDK related info, and doesn't interrupt the user experience in any way.</p>
+                                    <p>So these logs are an indicator of how the SDK works so that we can improve it.</p>
                                     <div class="callout-block callout-warning">
                                         <div class="icon-holder">
                                             <i class="fa fa-info-circle"></i>
                                         </div><!--//icon-holder-->
                                         <div class="content">
                                             <h4 class="callout-title">Logs Privacy</h4>
-                                            <p>All logs will be a package related logs , mostly errors and notices for the package preformance , it will not include any users info or other info consider private.</p>
+                                            <p>All logs will be package related logs; Mostly errors and notices for the package performance. It will not include any user info or any other info considered private.</p>
                                         </div><!--//content-->
                                     </div>
                                 </div>
 
                                 <div id="update-callback"  class="section-block">
                                     <h3 class="block-title">Update Callback</h3>
-                                    <p>This is a very important callback although shieldfy rely on so many metrics to identify attacks , Shieldfy still uses some rules at the heart of attack identification process .</p>
-                                    <p>The callback will be triggered if we release a new update in the application/attacks rules , so your application be up to date with the security automatically.</p>
+                                    <p>This is a very important callback. Although Shieldfy relies on so many metrics to identify attacks, Shieldfy still uses some rules at the heart of the attack identification process.</p>
+                                    <p>The callback will be triggered if we release a new update in the application/attack rules, so that your application be up to date with the security automatically.</p>
                                 </div>
                             </section>
-
 
                             <section id="debug-extending" class="doc-section">
                                 <h2 class="section-title">Debug &amp; Extending</h2>
 
                                 <div id="debug"  class="section-block">
                                     <h3 class="block-title">How to debug Shieldfy SDK</h3>
-                                    <p> Docs In Progress ... </p>
+                                    <p>Docs In Progress ...</p>
                                 </div>
 
                                 <div id="reading-logs"  class="section-block">
                                     <h3 class="block-title">Reading Logs</h3>
-                                    <p> Docs In Progress ... </p>
+                                    <p>Docs In Progress ...</p>
                                 </div>
 
                                 <div id="internals"  class="section-block">
                                     <h3 class="block-title">Internal Functions / Classes</h3>
-                                    <p> Docs In Progress ... </p>
+                                    <p>Docs In Progress ...</p>
                                 </div>
 
                                 <div id="monitors"  class="section-block">
                                     <h3 class="block-title">Enable / Disable Monitors</h3>
-                                    <p> Docs In Progress ... </p>
+                                    <p>Docs In Progress ...</p>
                                 </div>
 
                             </section>
-
 
                         </div><!--//content-inner-->
                     </div><!--//doc-content-->
@@ -336,11 +332,8 @@ $guard = Shieldfy\Guard::init([
                     </div><!--//doc-sidebar-->
                 </div><!--//doc-body-->
 
-
             </div><!--//container-->
         </div><!--//doc-wrapper-->
-
-
 
     </div><!--//page-wrapper-->
 

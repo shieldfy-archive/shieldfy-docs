@@ -1,8 +1,7 @@
-# Shieldfy main documentations repository
+# Shieldfy main documentation repository
 
 ## Theme Credits
 The theme used for the documentation is from [PrettyDocs](https://github.com/xriley/PrettyDocs-Theme)
-
 
 ## Dev Usage
 
