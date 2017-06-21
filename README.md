@@ -1,7 +1,7 @@
-# Shieldfy main documentation repository
+# Shieldfy main documentation repository.
 
 ## Theme Credits
-The theme used for the documentation is from [PrettyDocs](https://github.com/xriley/PrettyDocs-Theme)
+The theme used for the documentation is from [PrettyDocs](https://github.com/xriley/PrettyDocs-Theme).
 
 ## Dev Usage
 
@@ -9,7 +9,8 @@ The theme used for the documentation is from [PrettyDocs](https://github.com/xri
 npm install
 gulp build
 ```
-you can use gulp watch also for auto build
+
+You can also use gulp watch for auto build:
 
 ```bash
 gulp watch
