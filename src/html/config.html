@@ -52,7 +52,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><i class="icon icon_puzzle_alt"></i> Advanced Configurations</h1>
-                    <div class="meta"><i class="fa fa-clock-o"></i>Last updated: May 3rd, 2017</div>
+                    <div class="meta"><i class="fa fa-clock-o"></i>Last updated: Apr 9, 2018</div>
                 </div><!--//doc-header-->
 
                  <div class="doc-body">
@@ -88,7 +88,7 @@ Guard::init([
         'app_key'=&gt;'APP_KEY',
         'app_secret'=&gt;'APP_SECRET',
         'action'=&gt;'listen' //default is block
-])->catchCallbacks();
+]);
 </code></pre>
                                 </div>
 
@@ -118,112 +118,14 @@ Guard::init([
             'X-Frame-Options' => 'DENY', //this header value will be DENY
             'X-XSS-Protection' => false //this header will not be shown
         ]
-])->catchCallbacks();
+]);
 </code></pre>
 
                                 </div>
 
                             </section>
 
-                            <section id="using-cache" class="doc-section">
-                                <h2 class="section-title">Using Cache</h2>
-                                <div  class="section-block">
-                                    <p>Shieldfy SDK relies on cache for tracking user footprints locally on your server. By default, Shieldfy uses file cache in the SDK folder <code>/path/to/sdk/tmp</code>, but you can change the cache driver or use your own custom cache.</p>
-                                </div>
-                                <div id="filecache"  class="section-block">
-                                    <h3 class="block-title">File Cache</h3>
-                                    <p>You can use file cache easily by setting up the Shieldfy Cache manager.</p>
-<pre><code class="language-php">&lt;?php
-use Shieldfy\Guard;
-use Shieldfy\Cache\CacheManager;
 
-$cache = new CacheManager();
-$cache = $cache->setDriver('file', [
-    'path'=> realpath('path/to/cache/directory').'/', //make sure this dir is writable
-]);
-
-$guard = Shieldfy\Guard::init([
-    'app_key'=&gt;'APP_KEY',
-    'app_secret'=&gt;'APP_SECRET',
-],$cache)->catchCallbacks();
-</code></pre>
-                                </div>
-
-                                <div id="memcached"  class="section-block">
-                                    <h3 class="block-title">Memcached</h3>
-                                    <p>If you are using Memcached, you can configure Shieldfy to work with Memcached</p>
-<pre><code class="language-php">&lt;?php
-use Shieldfy\Guard;
-use Shieldfy\Cache\CacheManager;
-
-$cache = new CacheManager();
-$cache = $cache->setDriver('memcached', [
-    'servers'=> [
-
-    ]
-]);
-
-$guard = Shieldfy\Guard::init([
-    'app_key'=&gt;'APP_KEY',
-    'app_secret'=&gt;'APP_SECRET',
-],$cache)->catchCallbacks();
-</code></pre>
-
-                                </div>
-
-                                <div id="build-your-own-cache"  class="section-block">
-                                    <h3 class="block-title">Build your own cache</h3>
-                                    <p>If you want to use your own custom cache for Shieldfy, for example, using redis or custom mongodb collection .. etc, you can extend the driver from Cache manager.</p>
-                                    <p>First you need to create a class implements CacheInterface.</p>
-<pre><code class="language-php">&lt;?php
-namespace MyOwnApp\Cache;
-use Shieldfy\Cache\CacheInterface;
-
-class MyOwnCustomCache implements CacheInterface
-{
-    private $adapter = null;
-    private $timeout = 3600;
-    public function __construct($config = [], $timeout = '')
-    {
-        if ($timeout) {
-            $this->timeout = $timeout;
-        }
-        //.... your initial configurations
-    }
-
-    public function has($key)
-    {
-        //return true if the key exists
-    }
-    public function set($key, $value)
-    {
-        //sets key with the givin value
-    }
-    public function get($key)
-    {
-        //get the key value
-    }
-}
-</code></pre>
-
-                                    <p>Then setup the Cachemanager to use your <code>MyOwnCustomCache</code class</p>
-
-<pre><code class="language-php">&lt;?php
-use Shieldfy\Guard;
-use Shieldfy\Cache\CacheManager;
-
-$cache = new CacheManager();
-$cache = $cache->extendDriver(\MyOwnApp\Cache\MyOwnCustomCacheMyOwnCustomCache::class, $yourconfigurations);
-
-$guard = Shieldfy\Guard::init([
-    'app_key'=&gt;'APP_KEY',
-    'app_secret'=&gt;'APP_SECRET',
-],$cache)->catchCallbacks();
-</code></pre>
-
-                                </div>
-
-                            </section>
 
                             <section id="callbacks" class="doc-section">
                                 <h2 class="section-title">Callbacks</h2>
@@ -299,14 +201,7 @@ $guard = Shieldfy\Guard::init([
                                     </ul><!--//nav-->
                                 </li>
 
-                                <li>
-                                    <a class="scrollto" href="#using-cache">Using Cache</a>
-                                    <ul class="nav doc-sub-menu">
-                                        <li><a class="scrollto" href="#filecache">File Cache</a></li>
-                                        <li><a class="scrollto" href="#memcached">Memcahed Cache</a></li>
-                                        <li><a class="scrollto" href="#build-your-own-cache">Build your own Cache</a></li>
-                                    </ul><!--//nav-->
-                                </li>
+
 
                                 <li>
                                     <a class="scrollto" href="#callbacks">Callbacks</a>
@@ -351,7 +246,15 @@ $guard = Shieldfy\Guard::init([
     <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
     <script type="text/javascript" src="assets/js/app.js"></script>
+    <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+          ga('create', 'UA-62544133-5', 'auto');
+          ga('send', 'pageview');
+
+    </script>
 </body>
 </html>
-
