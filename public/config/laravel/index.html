@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    <title>Shieldfy Documentation :: Shieldfy Documentation</title>
+    <title>Laravel Framework :: Shieldfy Documentation</title>
     
     
     <link href="/css/nucleus.css?1523715487" rel="stylesheet">
@@ -32,7 +32,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/config/laravel/">
     <nav id="sidebar" class="">
 
 
@@ -186,7 +186,7 @@
   
     
     <li data-nav-id="/config/" title="Configurations" class="dd-item
-        
+        parent
         
         
         ">
@@ -210,7 +210,7 @@
  
   
     
-      <li data-nav-id="/config/laravel/" title="Laravel Framework" class="dd-item ">
+      <li data-nav-id="/config/laravel/" title="Laravel Framework" class="dd-item active">
         <a href="/config/laravel/">
         Laravel Framework
         
@@ -430,46 +430,241 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Shieldfy Documentation</a> > <a href='/config/'>Configurations</a> > Laravel Framework
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#publish-config">Publish Config</a></li>
+<li><a href="#debug-level">Debug level</a>
+<ul>
+<li><a href="#you-can-modify-it-on-the-env-recommended">You can modify it on the <code>.env</code> (recommended)</a></li>
+<li><a href="#or-you-can-modify-it-on-the-config-shieldfy-php-directly">Or you can modify it on the <code>config/shieldfy.php</code> directly</a></li>
+</ul></li>
+<li><a href="#threat-response-action">Threat Response (Action)</a>
+<ul>
+<li><a href="#you-can-modify-it-on-the-env-recommended-1">You can modify it on the <code>.env</code> (recommended)</a></li>
+<li><a href="#or-you-can-modify-it-on-the-config-shieldfy-php-directly-1">Or you can modify it on the <code>config/shieldfy.php</code> directly</a></li>
+</ul></li>
+<li><a href="#headers-control">Headers Control</a>
+<ul>
+<li><a href="#example">Example</a></li>
+<li><a href="#example-2">Example 2</a></li>
+</ul></li>
+<li><a href="#enable-disable-monitors">Enable Disable Monitors</a>
+<ul>
+<li><a href="#example-1">Example</a></li>
+</ul></li>
+<li><a href="#change-the-default-block-page">Change the default block page</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
 
         
         <div id="body-inner">
           
+            <h1>Laravel Framework</h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
-
- 
 
 
-<h1 id="shieldfy-documentation">Shieldfy Documentation</h1>
 
-<h2 id="getting-started">Getting Started</h2>
+<h3 id="publish-config">Publish Config</h3>
 
-<p>To get you started, you might find some of these links relevant:</p>
+<p>Go to your console and run <code>vendor:publish</code> artisan command</p>
+
+<pre><code class="language-shell">php artisan vendor:publish --provider=&quot;Shieldfy\Extensions\Laravel\ShieldfyServiceProvider&quot; --tag=&quot;config&quot;
+</code></pre>
+
+<p>now you will find a new file called <code>shieldfy.php</code> in your <code>config</code> directory</p>
+
+<h3 id="debug-level">Debug level</h3>
+
+<p>You can turn debug on/off depend on your needs in the application , the default value is false ( we recommend to leave it false in the production environment )</p>
+
+<p>If debug is false , this will prevent your application to throw errors related to security or bad server response for example.</p>
+
+<h4 id="you-can-modify-it-on-the-env-recommended">You can modify it on the <code>.env</code> (recommended)</h4>
+
+<pre><code>SHIELDFY_DEBUG=false
+</code></pre>
+
+<h4 id="or-you-can-modify-it-on-the-config-shieldfy-php-directly">Or you can modify it on the <code>config/shieldfy.php</code> directly</h4>
+
+<pre><code class="language-php">/*
+ |--------------------------------------------------------------------------
+ | Shieldfy debug whether or not expose debug and errors ( True , False )
+ |--------------------------------------------------------------------------
+ */
+'debug' =&gt; env('SHIELDFY_DEBUG', false),
+</code></pre>
+
+<h3 id="threat-response-action">Threat Response (Action)</h3>
+
+<p>Shieldfy let you control the action the package should take when spotting dangerous activities.</p>
+
+<p>Available Actions: ( Block | Listen ) The default action is block which will block the dangerous activities. The other action listen will record the threat and notify you, but will not block the request and will let the user continue to your application.</p>
+
+<h4 id="you-can-modify-it-on-the-env-recommended-1">You can modify it on the <code>.env</code> (recommended)</h4>
+
+<pre><code>SHIELDFY_ACTION=block
+</code></pre>
+
+<h4 id="or-you-can-modify-it-on-the-config-shieldfy-php-directly-1">Or you can modify it on the <code>config/shieldfy.php</code> directly</h4>
+
+<pre><code class="language-php">/*
+ |--------------------------------------------------------------------------
+ | Shieldfy default action for detecting threat ( block , listen )
+ |--------------------------------------------------------------------------
+ */
+'action' =&gt; env('SHIELDFY_ACTION', 'block'),
+</code></pre>
+
+<h3 id="headers-control">Headers Control</h3>
+
+<p>For security reasons Shieldfy expose number of headers to enforce some security practices.</p>
+
+<p>The headers exposed by default</p>
 
 <ul>
-<li>New to Shieldfy? Have a look at the <a href="/getting-started/">Getting Started</a>.</li>
-<li>Need Installing Instructions See <a href="/installation/">Installation</a>.</li>
-<li>No account yet? You can sign up for one at <a href="https://cloud.shieldfy.io/register">Shieldfy.io</a>.</li>
-<li>Feel Confused? Feel free to <a href="mailto:team@shieldfy.io">contact Us</a>.</li>
+<li><strong>X-XSS-Protection (Default: 1; mode=block)</strong>
+
+<ul>
+<li>For activating browser xss auditor <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">see more</a></li>
+</ul></li>
+<li><strong>X-Content-Type-Options (Default: nosniff)</strong>
+
+<ul>
+<li>prevent browser for sniffing the MimeType <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">see more</a></li>
+</ul></li>
+<li><strong>X-Frame-Options (Default: SAMEORIGIN)</strong>
+
+<ul>
+<li>Control Website loading inside Iframe</li>
+</ul></li>
 </ul>
 
-<h2 id="platforms">Platforms</h2>
+<p>If for some reason you don&rsquo;t want this headers to be exposed or you want to change it&rsquo;s value for it, you can control it. Just pass array for the headers and pass the changed value or false if you want to disable it completely.</p>
 
-<p>We are trying hard to support more platforms , But now you can use shieldfy only on PHP environment.</p>
+<h4 id="example">Example</h4>
 
-<p><a href="/installation/laravel/"><img src="https://cdn4.iconfinder.com/data/icons/logos-3/504/Laravel-128.png" alt="laravel" title="Laravel Framework" /></a> <a href="/installation/codeigniter/"><img src="https://cdn4.iconfinder.com/data/icons/logos-3/504/codeigniter-128.png" alt="codeigniter" title="Codeigniter Framework" /></a> <a href="/installation/generic-php/"><img src="https://cdn4.iconfinder.com/data/icons/logos-3/504/php-128.png" alt="php" title="Generic PHP" /></a></p>
+<p>You want to Deny the website from loading inside any iframes</p>
 
-<h2 id="have-a-question">Have A Question ?</h2>
+<p>In <code>config/shieldfy.php</code></p>
 
-<p>You can visit <a href="/installation/">FAQ</a> section , we are trying to add the common questions and answers.</p>
+<pre><code class="language-php">
+'headers' =&gt; [
+    'X-Frame-Options' =&gt; 'Deny'
+],
+</code></pre>
 
-<p>Or you can mail <a href="mailto:team@shieldfy.io">us directly</a>.</p>
+<h4 id="example-2">Example 2</h4>
+
+<p>You want to remove <code>X-Frame-Options</code> completely</p>
+
+<p>In <code>config/shieldfy.php</code></p>
+
+<pre><code class="language-php">
+'headers' =&gt; [
+    'X-Frame-Options' =&gt; false
+],
+</code></pre>
+
+<h3 id="enable-disable-monitors">Enable Disable Monitors</h3>
+
+<p>Shieldfy Security based on security monitors, each monitors analyze different layer &amp; component.</p>
+
+<p>There is seven Monitors right now</p>
+
+<ul>
+<li>User Monitor</li>
+<li>Request Monitor</li>
+<li>Database Monitor</li>
+<li>Upload Monitor</li>
+<li>Memory Monitor</li>
+<li>Exception Monitor</li>
+<li>View Monitor</li>
+</ul>
+
+<p>You can disable monitors if you want</p>
+
+<h4 id="example-1">Example</h4>
+
+<p>if you want to disable <code>View Monitor</code></p>
+
+<pre><code class="language-php">
+'disable' =&gt; [
+    'ViewMonitor'
+],
+</code></pre>
+
+<h3 id="change-the-default-block-page">Change the default block page</h3>
+
+<p>Shieldfy has a default block page , but you can change it to your own whitelabled page easily</p>
+
+<p>First publish views</p>
+
+<pre><code class="language-shell">php artisan vendor:publish --provider=&quot;Shieldfy\Extensions\Laravel\ShieldfyServiceProvider&quot; --tag=&quot;view&quot;
+</code></pre>
+
+<p>Then edit this file <code>resources/views/vendor/shieldfy/block.blade.php</code> to anything you need</p>
+
+<p>one thing you must to consider is <code>{incidentId}</code> text, this has to be in your block page because it will replaced with incidentId a unique identifier to every threat.</p>
+
+
+<footer class=" footline" >
 	
-  
+</footer>
+
+
         
         </div> 
         
@@ -584,6 +779,75 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                 
                 
 
@@ -640,70 +904,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -746,8 +946,10 @@
 
 
         
+            <a class="nav nav-prev" href="/config/" title="Configurations"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/getting-started/" title="Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/config/codeigniter/" title="CodeIgniter Framework" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

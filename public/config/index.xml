@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configurations on Shieldfy Documentation</title>
+    <link>https://docs.shieldfy.io/config/</link>
+    <description>Recent content in Configurations on Shieldfy Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Apr 2018 14:01:12 +0200</lastBuildDate>
+    
+	<atom:link href="https://docs.shieldfy.io/config/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Laravel Framework</title>
+      <link>https://docs.shieldfy.io/config/laravel/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/config/laravel/</guid>
+      <description>Publish Config Go to your console and run vendor:publish artisan command
+php artisan vendor:publish --provider=&amp;quot;Shieldfy\Extensions\Laravel\ShieldfyServiceProvider&amp;quot; --tag=&amp;quot;config&amp;quot;  now you will find a new file called shieldfy.php in your config directory
+Debug level You can turn debug on/off depend on your needs in the application , the default value is false ( we recommend to leave it false in the production environment )
+If debug is false , this will prevent your application to throw errors related to security or bad server response for example.</description>
+    </item>
+    
+    <item>
+      <title>CodeIgniter Framework</title>
+      <link>https://docs.shieldfy.io/config/codeigniter/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/config/codeigniter/</guid>
+      <description>Debug level You can turn debug on/off depend on your needs in the application , the default value is false ( we recommend to leave it false in the production environment )
+If debug is false , this will prevent your application to throw errors related to security or bad server response for example.
+ Open application/config/hooks.php and modify the call  $shieldfy = \Shieldfy\Guard::init([ &#39;app_key&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_KEY&amp;gt;&#39;, &#39;app_secret&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_SECRET&amp;gt;&#39;, &#39;debug&#39;=&amp;gt;true //default is false ]);  Threat Response (Action) Shieldfy let you control the action the package should take when spotting dangerous activities.</description>
+    </item>
+    
+    <item>
+      <title>Generic PHP</title>
+      <link>https://docs.shieldfy.io/config/generic-php/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/config/generic-php/</guid>
+      <description>Debug level You can turn debug on/off depend on your needs in the application , the default value is false ( we recommend to leave it false in the production environment )
+If debug is false , this will prevent your application to throw errors related to security or bad server response for example.
+ Open the file you called shieldfy in and modify the call  $shieldfy = \Shieldfy\Guard::init([ &#39;app_key&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_KEY&amp;gt;&#39;, &#39;app_secret&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_SECRET&amp;gt;&#39;, &#39;debug&#39;=&amp;gt;true //default is false ]);  Threat Response (Action) Shieldfy let you control the action the package should take when spotting dangerous activities.</description>
+    </item>
+    
+  </channel>
+</rss>

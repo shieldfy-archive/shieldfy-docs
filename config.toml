@@ -1,0 +1,9 @@
+baseURL = "https://docs.shieldfy.io"
+languageCode = "en-us"
+title = "Shieldfy Documentation"
+theme = "learn"
+defaultContentLanguage = "en"
+
+[params]
+  description = "Documentation for Shieldfy.io SDK"
+  author = "Shieldfy Security Team"
