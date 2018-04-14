@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Installation on Shieldfy Documentation</title>
+    <link>https://docs.shieldfy.io/installation/</link>
+    <description>Recent content in Installation on Shieldfy Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Apr 2018 14:01:12 +0200</lastBuildDate>
+    
+	<atom:link href="https://docs.shieldfy.io/installation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Laravel Framework</title>
+      <link>https://docs.shieldfy.io/installation/laravel/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/installation/laravel/</guid>
+      <description>Package installation From your console navigate to your application folder and run composer require
+For more information about composer click Composer Basic Usage
+composer require shieldfy/shieldfy-php-client  Add your Key &amp;amp; Secret Add your api key, api secret in your .env file
+SHIELDFY_APP_KEY=&amp;lt;YOUR_APP_KEY&amp;gt; SHIELDFY_APP_SECRET=&amp;lt;YOUR_APP_SECRET&amp;gt;  Register Service Provider (Laravel &amp;lt; 5.5) We leverage service provider auto discovery feature in laravel 5.5 , but if you are using laravel before 5.</description>
+    </item>
+    
+    <item>
+      <title>CodeIgniter Framework</title>
+      <link>https://docs.shieldfy.io/installation/codeigniter/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/installation/codeigniter/</guid>
+      <description> Package installation From your console navigate to your application folder and run composer require
+For more information about composer click Composer Basic Usage
+composer require shieldfy/shieldfy-php-client  Enable Shieldfy Hook Enable hooks in the config application/config/config.php
+$config[&#39;enable_hooks&#39;] = TRUE;  Add the following lines at the end of application/config/hooks.php file
+if(!class_exists(\Composer\Autoload\ClassLoader::class)) require_once(FCPATH.&#39;/vendor/autoload.php&#39;); $shieldfy = \Shieldfy\Guard::init([ &#39;app_key&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_KEY&amp;gt;&#39;, &#39;app_secret&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_SECRET&amp;gt;&#39; ]); $hook[&#39;post_controller_constructor&#39;] = \Shieldfy\Extensions\CodeIgniter\Bridge::hook($shieldfy,isset($hook) ? $hook : null);  </description>
+    </item>
+    
+    <item>
+      <title>Generic PHP</title>
+      <link>https://docs.shieldfy.io/installation/generic-php/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/installation/generic-php/</guid>
+      <description> Package installation From your console navigate to your application folder and run composer require
+For more information about composer click Composer Basic Usage
+composer require shieldfy/shieldfy-php-client  Load shieldfy Add this line to your script front usually index.php
+&amp;lt;?php if(!class_exists(\Composer\Autoload\ClassLoader::class)) require_once(__DIR__.&#39;/vendor/autoload.php&#39;); $shieldfy = \Shieldfy\Guard::init([ &#39;app_key&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_KEY&amp;gt;&#39;, &#39;app_secret&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_SECRET&amp;gt;&#39; ]);  Attach your Database Object PDO to shieldfy for analysis
+//$pdo is the variable that holds your PDO connection $shieldfy-&amp;gt;attachPDO($pdo);  </description>
+    </item>
+    
+  </channel>
+</rss>

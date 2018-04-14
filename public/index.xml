@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shieldfy Documentation</title>
+    <link>https://docs.shieldfy.io/</link>
+    <description>Recent content on Shieldfy Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Apr 2018 14:01:12 +0200</lastBuildDate>
+    
+	<atom:link href="https://docs.shieldfy.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Laravel Framework</title>
+      <link>https://docs.shieldfy.io/installation/laravel/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/installation/laravel/</guid>
+      <description>Package installation From your console navigate to your application folder and run composer require
+For more information about composer click Composer Basic Usage
+composer require shieldfy/shieldfy-php-client  Add your Key &amp;amp; Secret Add your api key, api secret in your .env file
+SHIELDFY_APP_KEY=&amp;lt;YOUR_APP_KEY&amp;gt; SHIELDFY_APP_SECRET=&amp;lt;YOUR_APP_SECRET&amp;gt;  Register Service Provider (Laravel &amp;lt; 5.5) We leverage service provider auto discovery feature in laravel 5.5 , but if you are using laravel before 5.</description>
+    </item>
+    
+    <item>
+      <title>CodeIgniter Framework</title>
+      <link>https://docs.shieldfy.io/installation/codeigniter/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/installation/codeigniter/</guid>
+      <description> Package installation From your console navigate to your application folder and run composer require
+For more information about composer click Composer Basic Usage
+composer require shieldfy/shieldfy-php-client  Enable Shieldfy Hook Enable hooks in the config application/config/config.php
+$config[&#39;enable_hooks&#39;] = TRUE;  Add the following lines at the end of application/config/hooks.php file
+if(!class_exists(\Composer\Autoload\ClassLoader::class)) require_once(FCPATH.&#39;/vendor/autoload.php&#39;); $shieldfy = \Shieldfy\Guard::init([ &#39;app_key&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_KEY&amp;gt;&#39;, &#39;app_secret&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_SECRET&amp;gt;&#39; ]); $hook[&#39;post_controller_constructor&#39;] = \Shieldfy\Extensions\CodeIgniter\Bridge::hook($shieldfy,isset($hook) ? $hook : null);  </description>
+    </item>
+    
+    <item>
+      <title>Generic PHP</title>
+      <link>https://docs.shieldfy.io/installation/generic-php/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/installation/generic-php/</guid>
+      <description> Package installation From your console navigate to your application folder and run composer require
+For more information about composer click Composer Basic Usage
+composer require shieldfy/shieldfy-php-client  Load shieldfy Add this line to your script front usually index.php
+&amp;lt;?php if(!class_exists(\Composer\Autoload\ClassLoader::class)) require_once(__DIR__.&#39;/vendor/autoload.php&#39;); $shieldfy = \Shieldfy\Guard::init([ &#39;app_key&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_KEY&amp;gt;&#39;, &#39;app_secret&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_SECRET&amp;gt;&#39; ]);  Attach your Database Object PDO to shieldfy for analysis
+//$pdo is the variable that holds your PDO connection $shieldfy-&amp;gt;attachPDO($pdo);  </description>
+    </item>
+    
+    <item>
+      <title>Laravel Framework</title>
+      <link>https://docs.shieldfy.io/config/laravel/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/config/laravel/</guid>
+      <description>Publish Config Go to your console and run vendor:publish artisan command
+php artisan vendor:publish --provider=&amp;quot;Shieldfy\Extensions\Laravel\ShieldfyServiceProvider&amp;quot; --tag=&amp;quot;config&amp;quot;  now you will find a new file called shieldfy.php in your config directory
+Debug level You can turn debug on/off depend on your needs in the application , the default value is false ( we recommend to leave it false in the production environment )
+If debug is false , this will prevent your application to throw errors related to security or bad server response for example.</description>
+    </item>
+    
+    <item>
+      <title>CodeIgniter Framework</title>
+      <link>https://docs.shieldfy.io/config/codeigniter/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/config/codeigniter/</guid>
+      <description>Debug level You can turn debug on/off depend on your needs in the application , the default value is false ( we recommend to leave it false in the production environment )
+If debug is false , this will prevent your application to throw errors related to security or bad server response for example.
+ Open application/config/hooks.php and modify the call  $shieldfy = \Shieldfy\Guard::init([ &#39;app_key&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_KEY&amp;gt;&#39;, &#39;app_secret&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_SECRET&amp;gt;&#39;, &#39;debug&#39;=&amp;gt;true //default is false ]);  Threat Response (Action) Shieldfy let you control the action the package should take when spotting dangerous activities.</description>
+    </item>
+    
+    <item>
+      <title>Generic PHP</title>
+      <link>https://docs.shieldfy.io/config/generic-php/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/config/generic-php/</guid>
+      <description>Debug level You can turn debug on/off depend on your needs in the application , the default value is false ( we recommend to leave it false in the production environment )
+If debug is false , this will prevent your application to throw errors related to security or bad server response for example.
+ Open the file you called shieldfy in and modify the call  $shieldfy = \Shieldfy\Guard::init([ &#39;app_key&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_KEY&amp;gt;&#39;, &#39;app_secret&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_SECRET&amp;gt;&#39;, &#39;debug&#39;=&amp;gt;true //default is false ]);  Threat Response (Action) Shieldfy let you control the action the package should take when spotting dangerous activities.</description>
+    </item>
+    
+    <item>
+      <title>Security Monitors</title>
+      <link>https://docs.shieldfy.io/internals/security-monitors/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/internals/security-monitors/</guid>
+      <description>Security Monitors Shieldfy Security based on security monitors, each monitors analyze different layer &amp;amp; component.
+There is seven Monitors right now :-
+ User Monitor Request Monitor Database Monitor Upload Monitor Memory Monitor Exception Monitor View Monitor  User Monitor This monitor is responsible for user analaysis and decide that if this user is malicious or not.
+Request Monitor This monitor is responsible for requests and different type of requests attacks and payloads.</description>
+    </item>
+    
+    <item>
+      <title>Logs &amp; Caching</title>
+      <link>https://docs.shieldfy.io/internals/logs/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/internals/logs/</guid>
+      <description>Logs &amp;amp; Caching Logs The SDk holds some logs , it stored here vendor/shieldfy/shieldfy-php-client/logs
+The logs holds information only about exceptions that occurs in the SDK itself.
+The logs don&amp;rsquo;t store any information related to website visitor or anyother private information.
+ Caching The SDK use caching to cache the information about current visitor and the steps they are doing on the website.
+The Caching stored on your default session storage.</description>
+    </item>
+    
+    <item>
+      <title>Exception Handling</title>
+      <link>https://docs.shieldfy.io/internals/exceptions/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/internals/exceptions/</guid>
+      <description>Exceptions within the SDK We tried to make the SDK stable as possible but anything can happens it&amp;rsquo;s the basic programming rules. Because of that we added custom exception handler to the SDK for the errors happens in the SDK code itself
+So for example if there is an error occur in the SDK code, the custom handler will catch the exception and will prevent the exception from stop the application execution.</description>
+    </item>
+    
+    <item>
+      <title>API Calls</title>
+      <link>https://docs.shieldfy.io/internals/api-calls/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/internals/api-calls/</guid>
+      <description>API Calls To Shieldfy Servers There is a number of API calls goes from the SDK you installed to Shieldfy Servers.
+If for any reason Shieldfy API Servers goes down or have something wrong it will not effect anything on your end. the call will be automatically skipped and the SDK will continue work without any errors or exceptions.
+ /install Call At first execution of the SDK the SDK will make initial call to the API to preform some installation Steps</description>
+    </item>
+    
+  </channel>
+</rss>

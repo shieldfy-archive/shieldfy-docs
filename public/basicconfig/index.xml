@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Basic Config on Shieldfy Documentation</title>
+    <link>http://example.org/basicconfig/</link>
+    <description>Recent content in Basic Config on Shieldfy Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Apr 2018 14:01:12 +0200</lastBuildDate>
+    
+	<atom:link href="http://example.org/basicconfig/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Laravel Framework</title>
+      <link>http://example.org/basicconfig/laravel/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>http://example.org/basicconfig/laravel/</guid>
+      <description> Publish Config Go to your console and run vendor:publish artisan command
+php artisan vendor:publish --provider=&amp;quot;Shieldfy\Extensions\Laravel\ShieldfyServiceProvider&amp;quot; --tag=&amp;quot;config&amp;quot;  now you will find a new file called shieldfy.php in your config directory
+Debug level </description>
+    </item>
+    
+  </channel>
+</rss>

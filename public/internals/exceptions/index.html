@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    <title>Shieldfy Documentation :: Shieldfy Documentation</title>
+    <title>Exception Handling :: Shieldfy Documentation</title>
     
     
     <link href="/css/nucleus.css?1523715487" rel="stylesheet">
@@ -32,7 +32,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/internals/exceptions/">
     <nav id="sidebar" class="">
 
 
@@ -275,7 +275,7 @@
   
     
     <li data-nav-id="/internals/" title="Internals" class="dd-item
-        
+        parent
         
         
         ">
@@ -337,7 +337,7 @@
  
   
     
-      <li data-nav-id="/internals/exceptions/" title="Exception Handling" class="dd-item ">
+      <li data-nav-id="/internals/exceptions/" title="Exception Handling" class="dd-item active">
         <a href="/internals/exceptions/">
         Exception Handling
         
@@ -430,46 +430,86 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Shieldfy Documentation</a> > <a href='/internals/'>Internals</a> > Exception Handling
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#exceptions-within-the-sdk">Exceptions within the SDK</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
 
         
         <div id="body-inner">
           
+            <h1>Exception Handling</h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
-
- 
 
 
-<h1 id="shieldfy-documentation">Shieldfy Documentation</h1>
 
-<h2 id="getting-started">Getting Started</h2>
+<h2 id="exceptions-within-the-sdk">Exceptions within the SDK</h2>
 
-<p>To get you started, you might find some of these links relevant:</p>
+<p>We tried to make the SDK stable as possible but anything can happens it&rsquo;s the basic programming rules.
+Because of that we added custom exception handler to the SDK for the errors happens in the SDK code itself</p>
 
-<ul>
-<li>New to Shieldfy? Have a look at the <a href="/getting-started/">Getting Started</a>.</li>
-<li>Need Installing Instructions See <a href="/installation/">Installation</a>.</li>
-<li>No account yet? You can sign up for one at <a href="https://cloud.shieldfy.io/register">Shieldfy.io</a>.</li>
-<li>Feel Confused? Feel free to <a href="mailto:team@shieldfy.io">contact Us</a>.</li>
-</ul>
+<p>So for example if there is an error occur in the SDK code, the custom handler will catch the exception
+and will prevent the exception from stop the application execution.</p>
 
-<h2 id="platforms">Platforms</h2>
+<p>at the same time it will send an api call <code>/exception</code> to our servers notifying us with the exception so we can work on a fix.</p>
 
-<p>We are trying hard to support more platforms , But now you can use shieldfy only on PHP environment.</p>
 
-<p><a href="/installation/laravel/"><img src="https://cdn4.iconfinder.com/data/icons/logos-3/504/Laravel-128.png" alt="laravel" title="Laravel Framework" /></a> <a href="/installation/codeigniter/"><img src="https://cdn4.iconfinder.com/data/icons/logos-3/504/codeigniter-128.png" alt="codeigniter" title="Codeigniter Framework" /></a> <a href="/installation/generic-php/"><img src="https://cdn4.iconfinder.com/data/icons/logos-3/504/php-128.png" alt="php" title="Generic PHP" /></a></p>
-
-<h2 id="have-a-question">Have A Question ?</h2>
-
-<p>You can visit <a href="/installation/">FAQ</a> section , we are trying to add the common questions and answers.</p>
-
-<p>Or you can mail <a href="mailto:team@shieldfy.io">us directly</a>.</p>
+<footer class=" footline" >
 	
-  
+</footer>
+
+
         
         </div> 
         
@@ -648,6 +688,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -661,37 +702,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
                     
                 
                 
@@ -720,6 +732,42 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -746,8 +794,10 @@
 
 
         
+            <a class="nav nav-prev" href="/internals/logs/" title="Logs &amp; Caching"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/getting-started/" title="Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/internals/api-calls/" title="API Calls" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    <title>Shieldfy Documentation :: Shieldfy Documentation</title>
+    <title>Security Monitors :: Shieldfy Documentation</title>
     
     
     <link href="/css/nucleus.css?1523715487" rel="stylesheet">
@@ -32,7 +32,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/internals/security-monitors/">
     <nav id="sidebar" class="">
 
 
@@ -275,7 +275,7 @@
   
     
     <li data-nav-id="/internals/" title="Internals" class="dd-item
-        
+        parent
         
         
         ">
@@ -299,7 +299,7 @@
  
   
     
-      <li data-nav-id="/internals/security-monitors/" title="Security Monitors" class="dd-item ">
+      <li data-nav-id="/internals/security-monitors/" title="Security Monitors" class="dd-item active">
         <a href="/internals/security-monitors/">
         Security Monitors
         
@@ -430,46 +430,129 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Shieldfy Documentation</a> > <a href='/internals/'>Internals</a> > Security Monitors
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#security-monitors">Security Monitors</a>
+<ul>
+<li><a href="#user-monitor">User Monitor</a></li>
+<li><a href="#request-monitor">Request Monitor</a></li>
+<li><a href="#database-monitor">Database Monitor</a></li>
+<li><a href="#upload-monitor">Upload Monitor</a></li>
+<li><a href="#memory-monitor">Memory Monitor</a></li>
+<li><a href="#exception-monitor">Exception Monitor</a></li>
+<li><a href="#view-monitor">View Monitor</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
 
         
         <div id="body-inner">
           
+            <h1>Security Monitors</h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
-
- 
 
 
-<h1 id="shieldfy-documentation">Shieldfy Documentation</h1>
 
-<h2 id="getting-started">Getting Started</h2>
+<h2 id="security-monitors">Security Monitors</h2>
 
-<p>To get you started, you might find some of these links relevant:</p>
+<p>Shieldfy Security based on security monitors, each monitors analyze different layer &amp; component.</p>
+
+<p>There is seven Monitors right now :-</p>
 
 <ul>
-<li>New to Shieldfy? Have a look at the <a href="/getting-started/">Getting Started</a>.</li>
-<li>Need Installing Instructions See <a href="/installation/">Installation</a>.</li>
-<li>No account yet? You can sign up for one at <a href="https://cloud.shieldfy.io/register">Shieldfy.io</a>.</li>
-<li>Feel Confused? Feel free to <a href="mailto:team@shieldfy.io">contact Us</a>.</li>
+<li>User Monitor</li>
+<li>Request Monitor</li>
+<li>Database Monitor</li>
+<li>Upload Monitor</li>
+<li>Memory Monitor</li>
+<li>Exception Monitor</li>
+<li>View Monitor</li>
 </ul>
 
-<h2 id="platforms">Platforms</h2>
+<h3 id="user-monitor">User Monitor</h3>
 
-<p>We are trying hard to support more platforms , But now you can use shieldfy only on PHP environment.</p>
+<p>This monitor is responsible for user analaysis and decide that if this user is malicious or not.</p>
 
-<p><a href="/installation/laravel/"><img src="https://cdn4.iconfinder.com/data/icons/logos-3/504/Laravel-128.png" alt="laravel" title="Laravel Framework" /></a> <a href="/installation/codeigniter/"><img src="https://cdn4.iconfinder.com/data/icons/logos-3/504/codeigniter-128.png" alt="codeigniter" title="Codeigniter Framework" /></a> <a href="/installation/generic-php/"><img src="https://cdn4.iconfinder.com/data/icons/logos-3/504/php-128.png" alt="php" title="Generic PHP" /></a></p>
+<h3 id="request-monitor">Request Monitor</h3>
 
-<h2 id="have-a-question">Have A Question ?</h2>
+<p>This monitor is responsible for requests and different type of requests attacks and payloads.</p>
 
-<p>You can visit <a href="/installation/">FAQ</a> section , we are trying to add the common questions and answers.</p>
+<h3 id="database-monitor">Database Monitor</h3>
 
-<p>Or you can mail <a href="mailto:team@shieldfy.io">us directly</a>.</p>
+<p>This monitor is responsible for Database and Queries that goes to the database.</p>
+
+<h3 id="upload-monitor">Upload Monitor</h3>
+
+<p>This monitor is responsible for uploads protection , analyzing uploaded files looking for malicious type of files and contents.</p>
+
+<h3 id="memory-monitor">Memory Monitor</h3>
+
+<p>This monitor is responsible for the attacks that targets the application memory.</p>
+
+<h3 id="exception-monitor">Exception Monitor</h3>
+
+<p>This monitor is responsible for monitoring exceptions looking for broken functions and classes the hacker is trying to exploit.</p>
+
+<h3 id="view-monitor">View Monitor</h3>
+
+<p>This monitor is responsible for the view layer , everything that backend is trying to send back the visitor browser.</p>
+
+
+<footer class=" footline" >
 	
-  
+</footer>
+
+
         
         </div> 
         
@@ -648,6 +731,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -655,6 +739,42 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -688,38 +808,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -746,8 +834,10 @@
 
 
         
+            <a class="nav nav-prev" href="/internals/" title="Internals"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/getting-started/" title="Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/internals/logs/" title="Logs &amp; Caching" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 

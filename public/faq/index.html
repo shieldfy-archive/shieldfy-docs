@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    <title>Shieldfy Documentation :: Shieldfy Documentation</title>
+    <title>FAQ :: Shieldfy Documentation</title>
     
     
     <link href="/css/nucleus.css?1523715487" rel="stylesheet">
@@ -32,7 +32,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/">
+  <body class="" data-url="/faq/">
     <nav id="sidebar" class="">
 
 
@@ -383,8 +383,8 @@
   
     
     <li data-nav-id="/faq/" title="FAQ" class="dd-item
-        
-        
+        parent
+        active
         
         ">
       <a href="/faq/">
@@ -430,46 +430,113 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fa fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/'>Shieldfy Documentation</a> > FAQ
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#does-shieldfy-affect-my-website-performance">Does shieldfy affect my website performance ?</a></li>
+<li><a href="#what-happens-if-shieldfy-servers-goes-down">What happens if Shieldfy servers goes down ?</a></li>
+<li><a href="#what-shieldfy-mainly-protect-me-against">What Shieldfy mainly protect me against ?</a></li>
+<li><a href="#do-shieldfy-access-my-code-what-about-privacy">Do shieldfy access my code ? What about privacy ?</a></li>
+<li><a href="#is-shieldfy-for-php-projects-only">Is Shieldfy for PHP projects only ?</a></li>
+<li><a href="#i-am-using-framework-and-frameworks-is-secure-by-default-should-i-use-shieldfy">I am using Framework and Frameworks is secure by default , Should i use Shieldfy ?</a></li>
+<li><a href="#who-behind-shieldfy-project">Who behind Shieldfy project ?</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
 
         
         <div id="body-inner">
           
+            <h1>FAQ</h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
-
- 
 
 
-<h1 id="shieldfy-documentation">Shieldfy Documentation</h1>
 
-<h2 id="getting-started">Getting Started</h2>
+<h3 id="does-shieldfy-affect-my-website-performance">Does shieldfy affect my website performance ?</h3>
 
-<p>To get you started, you might find some of these links relevant:</p>
+<p>We done a lot of performance optimization and tuning .. and all the analysis done on your server.
+Overall in the SDK takes less than 40 MilliSeconds (0.04 seconds) to process.</p>
 
-<ul>
-<li>New to Shieldfy? Have a look at the <a href="/getting-started/">Getting Started</a>.</li>
-<li>Need Installing Instructions See <a href="/installation/">Installation</a>.</li>
-<li>No account yet? You can sign up for one at <a href="https://cloud.shieldfy.io/register">Shieldfy.io</a>.</li>
-<li>Feel Confused? Feel free to <a href="mailto:team@shieldfy.io">contact Us</a>.</li>
-</ul>
+<h3 id="what-happens-if-shieldfy-servers-goes-down">What happens if Shieldfy servers goes down ?</h3>
 
-<h2 id="platforms">Platforms</h2>
+<p>Nothing .. Yes , we develop the SDK to run smoothly even if our servers is down.
+No errors or exceptions will raised and when the servers back up , it will resume the connection.</p>
 
-<p>We are trying hard to support more platforms , But now you can use shieldfy only on PHP environment.</p>
+<h3 id="what-shieldfy-mainly-protect-me-against">What Shieldfy mainly protect me against ?</h3>
 
-<p><a href="/installation/laravel/"><img src="https://cdn4.iconfinder.com/data/icons/logos-3/504/Laravel-128.png" alt="laravel" title="Laravel Framework" /></a> <a href="/installation/codeigniter/"><img src="https://cdn4.iconfinder.com/data/icons/logos-3/504/codeigniter-128.png" alt="codeigniter" title="Codeigniter Framework" /></a> <a href="/installation/generic-php/"><img src="https://cdn4.iconfinder.com/data/icons/logos-3/504/php-128.png" alt="php" title="Generic PHP" /></a></p>
+<p>All of the basic attacks ( XSS , SQLI , CSRF .. etc) and also the advanced attacks ( Object Injection , RCE&rsquo;s .. etc)
+We continue adding more techniques to keepup with the techniques discovered on the security world.</p>
 
-<h2 id="have-a-question">Have A Question ?</h2>
+<h3 id="do-shieldfy-access-my-code-what-about-privacy">Do shieldfy access my code ? What about privacy ?</h3>
 
-<p>You can visit <a href="/installation/">FAQ</a> section , we are trying to add the common questions and answers.</p>
+<p>The short answer we don&rsquo;t read all of your source code.
+The long answer is Shieldfy analyze the code in the run-time , it means function &amp; classes called on the run-time.
+It will only read the source code if the attack and stack trace pointed to a file that responsible for the attack.
+Then shieldfy will read this file source code to identify the vulnerability.</p>
 
-<p>Or you can mail <a href="mailto:team@shieldfy.io">us directly</a>.</p>
+<h3 id="is-shieldfy-for-php-projects-only">Is Shieldfy for PHP projects only ?</h3>
+
+<p>For now yes , We cover PHP language at first . But We have NodeJS &amp; Ruby SDK&rsquo;s on progress will be released soon.</p>
+
+<h3 id="i-am-using-framework-and-frameworks-is-secure-by-default-should-i-use-shieldfy">I am using Framework and Frameworks is secure by default , Should i use Shieldfy ?</h3>
+
+<p>This is a popular misconception. Because even frameworks done a good work securing the core from basic attacks , they had to make it generic security to make it suits every web application possible.
+And today web applications became more complex than ever and more developers became envolved with the same web application make the web application better but in the same time full of bugs and security issues.</p>
+
+<h3 id="who-behind-shieldfy-project">Who behind Shieldfy project ?</h3>
+
+<p>Shieldfy Inc. is registered in Delaware,United states , and the development team is in Alexandria ,Egypt. So we are operating according to United States &amp; Egyptian law.</p>
+
+
+<footer class=" footline" >
 	
-  
+</footer>
+
         
         </div> 
         
@@ -728,6 +795,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -745,6 +813,8 @@
         
 
 
+        
+            <a class="nav nav-prev" href="/internals/api-calls/" title="API Calls"> <i class="fa fa-chevron-left"></i></a>
         
         
             <a class="nav nav-next" href="/getting-started/" title="Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -787,4 +857,3 @@
 
   </body>
 </html>
-
