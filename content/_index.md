@@ -25,6 +25,6 @@ We are trying hard to support more platforms , But now you can use shieldfy only
 
 ## Have A Question ?
 
-You can visit [FAQ]({{< ref "installation" >}}) section , we are trying to add the common questions and answers.
+You can visit [FAQ]({{< ref "faq" >}}) section , we are trying to add the common questions and answers.
 
 Or you can mail [us directly](mailto:team@shieldfy.io).
