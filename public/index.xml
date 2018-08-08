@@ -24,6 +24,45 @@ SHIELDFY_APP_KEY=&amp;lt;YOUR_APP_KEY&amp;gt; SHIELDFY_APP_SECRET=&amp;lt;YOUR_A
     </item>
     
     <item>
+      <title>Lumen Framework</title>
+      <link>https://docs.shieldfy.io/installation/lumen/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/installation/lumen/</guid>
+      <description> Package installation From your console navigate to your application folder and enter the command below:
+composer require shieldfy/shieldfy-php-client  for more information about composer click here
+Add Shieldfy Key &amp;amp; Secret Add your key and secret to .env file
+SHIELDFY_APP_KEY=&amp;lt;APP_KEY&amp;gt; SHIELDFY_APP_SECRET=&amp;lt;APP_SECRET&amp;gt;  Add Shieldfy Service provider In bootstrap/app.php add ShieldfyServiceProvider
+$app-&amp;gt;register( \Shieldfy\Extensions\Lumen\ShieldfyServiceProvider::class);  </description>
+    </item>
+    
+    <item>
+      <title>Symfony Framework</title>
+      <link>https://docs.shieldfy.io/installation/symfony/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/installation/symfony/</guid>
+      <description>Require shieldfy package From your console navigate to your application folder and enter the command below:
+composer require shieldfy/shieldfy-php-client  for more information about composer click here
+Add symfony bundle Add shieldfy bundle to config/bundles.php file
+Shieldfy\Extensions\Symfony\ShieldfyBundle::class =&amp;gt; [&#39;all&#39; =&amp;gt; true],  Add shieldfy event subscriber Add shieldfy subscriber to config/services.yaml file
+Shieldfy\Extensions\Symfony\EventSubscriber\ShieldfySubscriber: tags: - { name: kernel.event_listener, event: kernel.controller }  Add shieldfy protection to your controllers all of your controllers must implement this Interface Shieldfy\Extensions\Symfony\ShieldfySymfonyControllerInterface</description>
+    </item>
+    
+    <item>
+      <title>Yii Framework</title>
+      <link>https://docs.shieldfy.io/installation/yii/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/installation/yii/</guid>
+      <description>Require shieldfy package From your console navigate to your application folder and enter the command below:
+composer require shieldfy/shieldfy-yii-extension  for more information about composer click here
+Yii Basic Add Shieldfy DB listener Add shieldfy attachPDO to this file config/db.php
+return [ ..... &#39;on afterOpen&#39; =&amp;gt; function($event) { (\Yii::$container-&amp;gt;get(&#39;shieldfy&#39;))?\Yii::$container-&amp;gt;get(&#39;shieldfy&#39;)-&amp;gt;attachPDO($event-&amp;gt;sender-&amp;gt;pdo):null; } ]  Add Shieldfy Key &amp;amp; Secret Add shieldfy key, secret to this file config/params.php
+return [ ..... &#39;Shieldfy&#39; =&amp;gt; [ &#39;appKey&#39; =&amp;gt; &#39;&amp;lt;APP_KEY&amp;gt;&#39;, &#39;appSecret&#39; =&amp;gt; &#39;&amp;lt;APP_SECRET&amp;gt;&#39;, ] ]  Yii Advanced Add Shieldfy DB listener Add shieldfy attachPDO to this file common/config/main-local.</description>
+    </item>
+    
+    <item>
       <title>CodeIgniter Framework</title>
       <link>https://docs.shieldfy.io/installation/codeigniter/</link>
       <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
@@ -59,6 +98,33 @@ composer require shieldfy/shieldfy-php-client  Load shieldfy Add this line to yo
 php artisan vendor:publish --provider=&amp;quot;Shieldfy\Extensions\Laravel\ShieldfyServiceProvider&amp;quot; --tag=&amp;quot;config&amp;quot;  now you will find a new file called shieldfy.php in your config directory
 Debug level You can turn debug on/off depend on your needs in the application , the default value is false ( we recommend to leave it false in the production environment )
 If debug is false , this will prevent your application to throw errors related to security or bad server response for example.</description>
+    </item>
+    
+    <item>
+      <title>Lumen Framework</title>
+      <link>https://docs.shieldfy.io/config/lumen/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/config/lumen/</guid>
+      <description>TBD</description>
+    </item>
+    
+    <item>
+      <title>Symfony Framework</title>
+      <link>https://docs.shieldfy.io/config/symfony/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/config/symfony/</guid>
+      <description>TBD</description>
+    </item>
+    
+    <item>
+      <title>Yii Framework</title>
+      <link>https://docs.shieldfy.io/config/yii/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/config/yii/</guid>
+      <description>TBD</description>
     </item>
     
     <item>
