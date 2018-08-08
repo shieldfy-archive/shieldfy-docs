@@ -24,6 +24,33 @@ If debug is false , this will prevent your application to throw errors related t
     </item>
     
     <item>
+      <title>Lumen Framework</title>
+      <link>https://docs.shieldfy.io/config/lumen/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/config/lumen/</guid>
+      <description>TBD</description>
+    </item>
+    
+    <item>
+      <title>Symfony Framework</title>
+      <link>https://docs.shieldfy.io/config/symfony/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/config/symfony/</guid>
+      <description>TBD</description>
+    </item>
+    
+    <item>
+      <title>Yii Framework</title>
+      <link>https://docs.shieldfy.io/config/yii/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/config/yii/</guid>
+      <description>TBD</description>
+    </item>
+    
+    <item>
       <title>CodeIgniter Framework</title>
       <link>https://docs.shieldfy.io/config/codeigniter/</link>
       <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>

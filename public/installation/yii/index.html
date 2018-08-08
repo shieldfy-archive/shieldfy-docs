@@ -9,7 +9,7 @@
 
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    <title>Tags :: Shieldfy Documentation</title>
+    <title>Yii Framework :: Shieldfy Documentation</title>
     
     
     <link href="/css/nucleus.css?1533734358" rel="stylesheet">
@@ -32,7 +32,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/tags/">
+  <body class="" data-url="/installation/yii/">
     <nav id="sidebar" class="">
 
 
@@ -97,7 +97,7 @@
   
     
     <li data-nav-id="/installation/" title="Installation" class="dd-item
-        
+        parent
         
         
         ">
@@ -178,7 +178,7 @@
  
   
     
-      <li data-nav-id="/installation/yii/" title="Yii Framework" class="dd-item ">
+      <li data-nav-id="/installation/yii/" title="Yii Framework" class="dd-item active">
         <a href="/installation/yii/">
         Yii Framework
         
@@ -561,7 +561,19 @@
                     
           
           
-            Tags
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Shieldfy Documentation</a> > <a href='/installation/'>Installation</a> > Yii Framework
+          
+         
+          
+         
           
            
                   </span>
@@ -569,7 +581,24 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#require-shieldfy-package">Require shieldfy package</a></li>
+<li><a href="#yii-basic">Yii Basic</a>
+<ul>
+<li><a href="#add-shieldfy-db-listener">Add Shieldfy DB listener</a></li>
+<li><a href="#add-shieldfy-key-secret">Add Shieldfy Key &amp; Secret</a></li>
+</ul></li>
+<li><a href="#yii-advanced">Yii Advanced</a>
+<ul>
+<li><a href="#add-shieldfy-db-listener-1">Add Shieldfy DB listener</a></li>
+<li><a href="#add-shieldfy-key-secret-1">Add Shieldfy Key &amp; Secret</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -581,7 +610,7 @@
         
         <div id="body-inner">
           
-            <h1>Tags</h1>
+            <h1>Yii Framework</h1>
           
 
         
@@ -589,9 +618,84 @@
 
 
 
+<h2 id="require-shieldfy-package">Require shieldfy package</h2>
+
+<p>From your console navigate to your application folder and enter the command below:</p>
+
+<pre><code>composer require shieldfy/shieldfy-yii-extension
+</code></pre>
+
+<p>for more information about composer click <a href="https://getcomposer.org/doc/01-basic-usage.md">here</a></p>
+
+<h2 id="yii-basic">Yii Basic</h2>
+
+<h3 id="add-shieldfy-db-listener">Add Shieldfy DB listener</h3>
+
+<p>Add shieldfy attachPDO to this file <code>config/db.php</code></p>
+
+<pre><code>return [
+    .....
+
+    'on afterOpen' =&gt; function($event) {
+            (\Yii::$container-&gt;get('shieldfy'))?\Yii::$container-&gt;get('shieldfy')-&gt;attachPDO($event-&gt;sender-&gt;pdo):null;
+    }
+]
+</code></pre>
+
+<h3 id="add-shieldfy-key-secret">Add Shieldfy Key &amp; Secret</h3>
+
+<p>Add shieldfy key, secret to this file <code>config/params.php</code></p>
+
+<pre><code>return [
+    .....             
+    'Shieldfy' =&gt; [
+        'appKey' =&gt; '&lt;APP_KEY&gt;',
+        'appSecret' =&gt; '&lt;APP_SECRET&gt;',
+    ]
+]
+
+</code></pre>
+
+<h2 id="yii-advanced">Yii Advanced</h2>
+
+<h3 id="add-shieldfy-db-listener-1">Add Shieldfy DB listener</h3>
+
+<p>Add shieldfy attachPDO to this file <code>common/config/main-local.php</code></p>
+
+<pre><code>return [
+    'components' =&gt; [
+        'db' =&gt; [
+            ...
+            'on afterOpen' =&gt; function($event) {
+                (\Yii::$container-&gt;get('shieldfy'))?\Yii::$container-&gt;get('shieldfy')-&gt;attachPDO($event-&gt;sender-&gt;pdo):null;
+        	},
+        ],
+        'mailer' =&gt; [
+        .....
+    ],
+];
+
+</code></pre>
+
+<h3 id="add-shieldfy-key-secret-1">Add Shieldfy Key &amp; Secret</h3>
+
+<p>Add shieldfy key, secret to this file <code>common/config/params.php</code></p>
+
+<pre><code>return [
+    .....             
+    'Shieldfy' =&gt; [
+        'appKey' =&gt; '&lt;APP_KEY&gt;',
+        'appSecret' =&gt; '&lt;APP_SECRET&gt;',
+    ]
+]
+
+</code></pre>
+
+
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -643,6 +747,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -655,6 +760,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -704,21 +812,6 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -736,101 +829,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -939,6 +939,118 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -965,8 +1077,10 @@
 
 
         
+            <a class="nav nav-prev" href="/installation/symfony/" title="Symfony Framework"> <i class="fa fa-chevron-left"></i></a>
         
-            <a class="nav nav-next" href="/getting-started/" title="Getting Started" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+        
+            <a class="nav nav-next" href="/installation/codeigniter/" title="CodeIgniter Framework" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
         
     </div>
 
@@ -1006,3 +1120,4 @@
 
   </body>
 </html>
+
