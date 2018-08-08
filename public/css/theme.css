@@ -1125,5 +1125,10 @@ pre .copy-to-clipboard:hover {
 #searchResults {
     text-align: left;
 }
+a img{
+    max-width: 100px;
+    max-height:100px;
+    margin: 0 15px;
+}
 
 /*# sourceMappingURL=theme.css.map */
