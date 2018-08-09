@@ -23,7 +23,13 @@ Shieldfy analysis done via our SDK within your application’s runtime. These ar
 
 This is the available integrations till now , we work on add more very soon:
 
-[![laravel](https://cdn4.iconfinder.com/data/icons/logos-3/504/Laravel-128.png "Laravel Framework")]({{< ref "installation/laravel.md" >}}) [![codeigniter](https://cdn4.iconfinder.com/data/icons/logos-3/504/codeigniter-128.png "Codeigniter Framework")]({{< ref "installation/codeigniter.md" >}}) [![php](https://cdn4.iconfinder.com/data/icons/logos-3/504/php-128.png "Generic PHP")]({{< ref "installation/generic-php.md" >}})
+
+[![laravel](/img/laravel-logo.png "Laravel Framework")]({{< ref "installation/laravel.md" >}}) 
+[![symfony](/img/symfony-logo.png "Symfony Framework")]({{< ref "installation/symfony.md" >}})
+[![lumen](/img/lumen-logo.png "Lumen Framework")]({{< ref "installation/lumen.md" >}})
+[![yii](/img/yii-logo.png "YII Framework")]({{< ref "installation/yii.md" >}})
+[![codeigniter](/img/codeigniter-logo.png "Codeigniter Framework")]({{< ref "installation/codeigniter.md" >}}) 
+[![php](/img/php-logo.png "Generic PHP")]({{< ref "installation/generic-php.md" >}})
 
 
 For all SDKs however the basics are the same. But see every integration page for more specific instructions.

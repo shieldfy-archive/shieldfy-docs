@@ -28,12 +28,12 @@
   </url>
   
   <url>
-    <loc>https://docs.shieldfy.io/installation/yii/</loc>
+    <loc>https://docs.shieldfy.io/installation/codeigniter/</loc>
     <lastmod>2018-04-10T14:01:12+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.shieldfy.io/installation/codeigniter/</loc>
+    <loc>https://docs.shieldfy.io/installation/yii/</loc>
     <lastmod>2018-04-10T14:01:12+02:00</lastmod>
   </url>
   
@@ -48,37 +48,22 @@
   </url>
   
   <url>
-    <loc>https://docs.shieldfy.io/config/laravel/</loc>
-    <lastmod>2018-04-10T14:01:12+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.shieldfy.io/config/lumen/</loc>
-    <lastmod>2018-04-10T14:01:12+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.shieldfy.io/config/symfony/</loc>
-    <lastmod>2018-04-10T14:01:12+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.shieldfy.io/config/yii/</loc>
-    <lastmod>2018-04-10T14:01:12+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://docs.shieldfy.io/config/codeigniter/</loc>
     <lastmod>2018-04-10T14:01:12+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.shieldfy.io/config/generic-php/</loc>
+    <loc>https://docs.shieldfy.io/config/</loc>
     <lastmod>2018-04-10T14:01:12+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://docs.shieldfy.io/config/</loc>
+    <loc>https://docs.shieldfy.io/config/laravel/</loc>
+    <lastmod>2018-04-10T14:01:12+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.shieldfy.io/config/generic-php/</loc>
     <lastmod>2018-04-10T14:01:12+02:00</lastmod>
   </url>
   

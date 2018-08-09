@@ -21,8 +21,8 @@ We are trying hard to support more platforms , But now you can use shieldfy only
 
 
 [![laravel](/img/laravel-logo.png "Laravel Framework")]({{< ref "installation/laravel.md" >}}) 
-[![lumen](/img/lumen-logo.png "Lumen Framework")]({{< ref "installation/lumen.md" >}})
 [![symfony](/img/symfony-logo.png "Symfony Framework")]({{< ref "installation/symfony.md" >}})
+[![lumen](/img/lumen-logo.png "Lumen Framework")]({{< ref "installation/lumen.md" >}})
 [![yii](/img/yii-logo.png "YII Framework")]({{< ref "installation/yii.md" >}})
 [![codeigniter](/img/codeigniter-logo.png "Codeigniter Framework")]({{< ref "installation/codeigniter.md" >}}) 
 [![php](/img/php-logo.png "Generic PHP")]({{< ref "installation/generic-php.md" >}})
