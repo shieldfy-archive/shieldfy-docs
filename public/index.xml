@@ -50,19 +50,6 @@ Shieldfy\Extensions\Symfony\EventSubscriber\ShieldfySubscriber: tags: - { name: 
     </item>
     
     <item>
-      <title>Yii Framework</title>
-      <link>https://docs.shieldfy.io/installation/yii/</link>
-      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
-      
-      <guid>https://docs.shieldfy.io/installation/yii/</guid>
-      <description>Require shieldfy package From your console navigate to your application folder and enter the command below:
-composer require shieldfy/shieldfy-yii-extension  for more information about composer click here
-Yii Basic Add Shieldfy DB listener Add shieldfy attachPDO to this file config/db.php
-return [ ..... &#39;on afterOpen&#39; =&amp;gt; function($event) { (\Yii::$container-&amp;gt;get(&#39;shieldfy&#39;))?\Yii::$container-&amp;gt;get(&#39;shieldfy&#39;)-&amp;gt;attachPDO($event-&amp;gt;sender-&amp;gt;pdo):null; } ]  Add Shieldfy Key &amp;amp; Secret Add shieldfy key, secret to this file config/params.php
-return [ ..... &#39;Shieldfy&#39; =&amp;gt; [ &#39;appKey&#39; =&amp;gt; &#39;&amp;lt;APP_KEY&amp;gt;&#39;, &#39;appSecret&#39; =&amp;gt; &#39;&amp;lt;APP_SECRET&amp;gt;&#39;, ] ]  Yii Advanced Add Shieldfy DB listener Add shieldfy attachPDO to this file common/config/main-local.</description>
-    </item>
-    
-    <item>
       <title>CodeIgniter Framework</title>
       <link>https://docs.shieldfy.io/installation/codeigniter/</link>
       <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
@@ -73,6 +60,19 @@ For more information about composer click Composer Basic Usage
 composer require shieldfy/shieldfy-php-client  Enable Shieldfy Hook Enable hooks in the config application/config/config.php
 $config[&#39;enable_hooks&#39;] = TRUE;  Add the following lines at the end of application/config/hooks.php file
 if(!class_exists(\Composer\Autoload\ClassLoader::class)) require_once(FCPATH.&#39;/vendor/autoload.php&#39;); $shieldfy = \Shieldfy\Guard::init([ &#39;app_key&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_KEY&amp;gt;&#39;, &#39;app_secret&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_SECRET&amp;gt;&#39; ]); $hook[&#39;post_controller_constructor&#39;] = \Shieldfy\Extensions\CodeIgniter\Bridge::hook($shieldfy,isset($hook) ? $hook : null);  </description>
+    </item>
+    
+    <item>
+      <title>Yii Framework</title>
+      <link>https://docs.shieldfy.io/installation/yii/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/installation/yii/</guid>
+      <description>Require shieldfy package From your console navigate to your application folder and enter the command below:
+composer require shieldfy/shieldfy-yii-extension  for more information about composer click here
+Yii Basic Add Shieldfy DB listener Add shieldfy attachPDO to this file config/db.php
+return [ ..... &#39;on afterOpen&#39; =&amp;gt; function($event) { (\Yii::$container-&amp;gt;get(&#39;shieldfy&#39;))?\Yii::$container-&amp;gt;get(&#39;shieldfy&#39;)-&amp;gt;attachPDO($event-&amp;gt;sender-&amp;gt;pdo):null; } ]  Add Shieldfy Key &amp;amp; Secret Add shieldfy key, secret to this file config/params.php
+return [ ..... &#39;Shieldfy&#39; =&amp;gt; [ &#39;appKey&#39; =&amp;gt; &#39;&amp;lt;APP_KEY&amp;gt;&#39;, &#39;appSecret&#39; =&amp;gt; &#39;&amp;lt;APP_SECRET&amp;gt;&#39;, ] ]  Yii Advanced Add Shieldfy DB listener Add shieldfy attachPDO to this file common/config/main-local.</description>
     </item>
     
     <item>
@@ -89,6 +89,17 @@ composer require shieldfy/shieldfy-php-client  Load shieldfy Add this line to yo
     </item>
     
     <item>
+      <title>CodeIgniter Framework</title>
+      <link>https://docs.shieldfy.io/config/codeigniter/</link>
+      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
+      
+      <guid>https://docs.shieldfy.io/config/codeigniter/</guid>
+      <description>Debug level You can turn debug on/off depend on your needs in the application , the default value is false ( we recommend to leave it false in the production environment )
+If debug is false , this will prevent your application to throw errors related to security or bad server response for example.
+ Open application/config/hooks.php and modify the call  $shieldfy = \Shieldfy\Guard::init([ &#39;app_key&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_KEY&amp;gt;&#39;, &#39;app_secret&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_SECRET&amp;gt;&#39;, &#39;debug&#39;=&amp;gt;true //default is false ]);  Threat Response (Action) Shieldfy let you control the action the package should take when spotting dangerous activities.</description>
+    </item>
+    
+    <item>
       <title>Laravel Framework</title>
       <link>https://docs.shieldfy.io/config/laravel/</link>
       <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
@@ -98,44 +109,6 @@ composer require shieldfy/shieldfy-php-client  Load shieldfy Add this line to yo
 php artisan vendor:publish --provider=&amp;quot;Shieldfy\Extensions\Laravel\ShieldfyServiceProvider&amp;quot; --tag=&amp;quot;config&amp;quot;  now you will find a new file called shieldfy.php in your config directory
 Debug level You can turn debug on/off depend on your needs in the application , the default value is false ( we recommend to leave it false in the production environment )
 If debug is false , this will prevent your application to throw errors related to security or bad server response for example.</description>
-    </item>
-    
-    <item>
-      <title>Lumen Framework</title>
-      <link>https://docs.shieldfy.io/config/lumen/</link>
-      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
-      
-      <guid>https://docs.shieldfy.io/config/lumen/</guid>
-      <description>TBD</description>
-    </item>
-    
-    <item>
-      <title>Symfony Framework</title>
-      <link>https://docs.shieldfy.io/config/symfony/</link>
-      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
-      
-      <guid>https://docs.shieldfy.io/config/symfony/</guid>
-      <description>TBD</description>
-    </item>
-    
-    <item>
-      <title>Yii Framework</title>
-      <link>https://docs.shieldfy.io/config/yii/</link>
-      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
-      
-      <guid>https://docs.shieldfy.io/config/yii/</guid>
-      <description>TBD</description>
-    </item>
-    
-    <item>
-      <title>CodeIgniter Framework</title>
-      <link>https://docs.shieldfy.io/config/codeigniter/</link>
-      <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
-      
-      <guid>https://docs.shieldfy.io/config/codeigniter/</guid>
-      <description>Debug level You can turn debug on/off depend on your needs in the application , the default value is false ( we recommend to leave it false in the production environment )
-If debug is false , this will prevent your application to throw errors related to security or bad server response for example.
- Open application/config/hooks.php and modify the call  $shieldfy = \Shieldfy\Guard::init([ &#39;app_key&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_KEY&amp;gt;&#39;, &#39;app_secret&#39; =&amp;gt; &#39;&amp;lt;YOUR_APP_SECRET&amp;gt;&#39;, &#39;debug&#39;=&amp;gt;true //default is false ]);  Threat Response (Action) Shieldfy let you control the action the package should take when spotting dangerous activities.</description>
     </item>
     
     <item>
