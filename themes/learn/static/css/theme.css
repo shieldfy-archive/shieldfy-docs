@@ -1130,5 +1130,11 @@ a img{
     max-height:100px;
     margin: 0 15px;
 }
+@media (max-width: 320px) {
+    a img{
+        max-width: 50px;
+        max-height:50px;
+    }
+}
 
 /*# sourceMappingURL=theme.css.map */
