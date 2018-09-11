@@ -3,26 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="generator" content="Hugo 0.46" />
+    <meta name="generator" content="Hugo 0.47.1" />
     <meta name="description" content="Documentation for Shieldfy.io SDK">
 <meta name="author" content="Shieldfy Security Team">
 
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    <title>Yii Framework :: Shieldfy Documentation</title>
+    <title>Yii2 Framework :: Shieldfy Documentation</title>
     
     
-    <link href="/css/nucleus.css?1534076815" rel="stylesheet">
-    <link href="/css/font-awesome.min.css?1534076815" rel="stylesheet">
-    <link href="/css/hybrid.css?1534076815" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1534076815" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1534076815" rel="stylesheet">
-    <link href="/css/auto-complete.css?1534076815" rel="stylesheet">
-    <link href="/css/theme.css?1534076815" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1534076815" rel="stylesheet">
+    <link href="/css/nucleus.css?1536704929" rel="stylesheet">
+    <link href="/css/font-awesome.min.css?1536704929" rel="stylesheet">
+    <link href="/css/hybrid.css?1536704929" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1536704929" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1536704929" rel="stylesheet">
+    <link href="/css/auto-complete.css?1536704929" rel="stylesheet">
+    <link href="/css/theme.css?1536704929" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1536704929" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1534076815"></script>
+    <script src="/js/jquery-2.x.min.js?1536704929"></script>
     
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{ 
@@ -51,14 +51,14 @@
     <span data-search-clear=""><i class="fa fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1534076815"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1534076815"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1536704929"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1536704929"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1534076815"></script>
+<script type="text/javascript" src="/js/search.js?1536704929"></script>
 
     
   </div>
@@ -197,9 +197,9 @@
  
   
     
-      <li data-nav-id="/installation/yii/" title="Yii Framework" class="dd-item active">
+      <li data-nav-id="/installation/yii/" title="Yii2 Framework" class="dd-item active">
         <a href="/installation/yii/">
-        Yii Framework
+        Yii2 Framework
         
         </a>
     </li>
@@ -512,7 +512,7 @@
             
           
           
-            <a href='/'>Shieldfy Documentation</a> > <a href='/installation/'>Installation</a> > Yii Framework
+            <a href='/'>Shieldfy Documentation</a> > <a href='/installation/'>Installation</a> > Yii2 Framework
           
          
           
@@ -528,17 +528,9 @@
 <ul>
 <li>
 <ul>
-<li><a href="#require-shieldfy-package">Require shieldfy package</a></li>
-<li><a href="#yii-basic">Yii Basic</a>
-<ul>
+<li><a href="#require-shieldfy-yii2-extension">Require shieldfy Yii2 extension</a></li>
+<li><a href="#add-shieldfy-component">Add Shieldfy Component</a></li>
 <li><a href="#add-shieldfy-db-listener">Add Shieldfy DB listener</a></li>
-<li><a href="#add-shieldfy-key-secret">Add Shieldfy Key &amp; Secret</a></li>
-</ul></li>
-<li><a href="#yii-advanced">Yii Advanced</a>
-<ul>
-<li><a href="#add-shieldfy-db-listener-1">Add Shieldfy DB listener</a></li>
-<li><a href="#add-shieldfy-key-secret-1">Add Shieldfy Key &amp; Secret</a></li>
-</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -553,7 +545,7 @@
         
         <div id="body-inner">
           
-            <h1>Yii Framework</h1>
+            <h1>Yii2 Framework</h1>
           
 
         
@@ -561,7 +553,7 @@
 
 
 
-<h2 id="require-shieldfy-package">Require shieldfy package</h2>
+<h2 id="require-shieldfy-yii2-extension">Require shieldfy Yii2 extension</h2>
 
 <p>From your console navigate to your application folder and enter the command below:</p>
 
@@ -570,13 +562,25 @@
 
 <p>for more information about composer click <a href="https://getcomposer.org/doc/01-basic-usage.md">here</a></p>
 
-<h2 id="yii-basic">Yii Basic</h2>
+<h2 id="add-shieldfy-component">Add Shieldfy Component</h2>
 
-<h3 id="add-shieldfy-db-listener">Add Shieldfy DB listener</h3>
+<pre><code class="language-php">'bootstrap' =&gt; ['shieldfy'],
+'components' =&gt; [
+    ...
+    'shieldfy' =&gt; [
+          'class' =&gt; 'Shieldfy\Extensions\Yii\BootstrapLoader',
+          'appKey' =&gt; '&lt;APP_KEY&gt;',
+          'appSecret' =&gt; '&lt;APP_SECRET&gt;',
+    ],
+    ...
+]
+</code></pre>
 
-<p>Add shieldfy attachPDO to this file <code>config/db.php</code></p>
+<h2 id="add-shieldfy-db-listener">Add Shieldfy DB listener</h2>
 
-<pre><code>return [
+<p>If you use Yii2 Basic. add shieldfy attachPDO to this file <code>config/db.php</code></p>
+
+<pre><code class="language-php">return [
     .....
 
     'on afterOpen' =&gt; function($event) {
@@ -585,53 +589,20 @@
 ]
 </code></pre>
 
-<h3 id="add-shieldfy-key-secret">Add Shieldfy Key &amp; Secret</h3>
+<p>If you use Yii2 Advanced. add shieldfy attachPDO to this file <code>common/config/main-local.php</code></p>
 
-<p>Add shieldfy key, secret to this file <code>config/params.php</code></p>
-
-<pre><code>return [
-    .....             
-    'Shieldfy' =&gt; [
-        'appKey' =&gt; '&lt;APP_KEY&gt;',
-        'appSecret' =&gt; '&lt;APP_SECRET&gt;',
-    ]
-]
-
-</code></pre>
-
-<h2 id="yii-advanced">Yii Advanced</h2>
-
-<h3 id="add-shieldfy-db-listener-1">Add Shieldfy DB listener</h3>
-
-<p>Add shieldfy attachPDO to this file <code>common/config/main-local.php</code></p>
-
-<pre><code>return [
+<pre><code class="language-php">return [
     'components' =&gt; [
         'db' =&gt; [
             ...
             'on afterOpen' =&gt; function($event) {
                 (\Yii::$container-&gt;get('shieldfy'))?\Yii::$container-&gt;get('shieldfy')-&gt;attachPDO($event-&gt;sender-&gt;pdo):null;
-        	},
+            },
         ],
         'mailer' =&gt; [
         .....
     ],
 ];
-
-</code></pre>
-
-<h3 id="add-shieldfy-key-secret-1">Add Shieldfy Key &amp; Secret</h3>
-
-<p>Add shieldfy key, secret to this file <code>common/config/params.php</code></p>
-
-<pre><code>return [
-    .....             
-    'Shieldfy' =&gt; [
-        'appKey' =&gt; '&lt;APP_KEY&gt;',
-        'appSecret' =&gt; '&lt;APP_SECRET&gt;',
-    ]
-]
-
 </code></pre>
 
 
@@ -984,20 +955,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1534076815"></script>
-    <script src="/js/perfect-scrollbar.min.js?1534076815"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1534076815"></script>
-    <script src="/js/jquery.sticky.js?1534076815"></script>
-    <script src="/js/featherlight.min.js?1534076815"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1534076815"></script>
-    <script src="/js/highlight.pack.js?1534076815"></script>
+    <script src="/js/clipboard.min.js?1536704929"></script>
+    <script src="/js/perfect-scrollbar.min.js?1536704929"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1536704929"></script>
+    <script src="/js/jquery.sticky.js?1536704929"></script>
+    <script src="/js/featherlight.min.js?1536704929"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1536704929"></script>
+    <script src="/js/highlight.pack.js?1536704929"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1534076815"></script>
-    <script src="/js/learn.js?1534076815"></script>
-    <script src="/js/hugo-learn.js?1534076815"></script>
+    <script src="/js/modernizr.custom.71422.js?1536704929"></script>
+    <script src="/js/learn.js?1536704929"></script>
+    <script src="/js/hugo-learn.js?1536704929"></script>
 
-    <link href="/mermaid/mermaid.css?1534076815" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1534076815"></script>
+    <link href="/mermaid/mermaid.css?1536704929" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1536704929"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
