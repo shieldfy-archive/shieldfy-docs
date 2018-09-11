@@ -63,16 +63,14 @@ if(!class_exists(\Composer\Autoload\ClassLoader::class)) require_once(FCPATH.&#3
     </item>
     
     <item>
-      <title>Yii Framework</title>
+      <title>Yii2 Framework</title>
       <link>https://docs.shieldfy.io/installation/yii/</link>
       <pubDate>Tue, 10 Apr 2018 14:01:12 +0200</pubDate>
       
       <guid>https://docs.shieldfy.io/installation/yii/</guid>
-      <description>Require shieldfy package From your console navigate to your application folder and enter the command below:
+      <description>Require shieldfy Yii2 extension From your console navigate to your application folder and enter the command below:
 composer require shieldfy/shieldfy-yii-extension  for more information about composer click here
-Yii Basic Add Shieldfy DB listener Add shieldfy attachPDO to this file config/db.php
-return [ ..... &#39;on afterOpen&#39; =&amp;gt; function($event) { (\Yii::$container-&amp;gt;get(&#39;shieldfy&#39;))?\Yii::$container-&amp;gt;get(&#39;shieldfy&#39;)-&amp;gt;attachPDO($event-&amp;gt;sender-&amp;gt;pdo):null; } ]  Add Shieldfy Key &amp;amp; Secret Add shieldfy key, secret to this file config/params.php
-return [ ..... &#39;Shieldfy&#39; =&amp;gt; [ &#39;appKey&#39; =&amp;gt; &#39;&amp;lt;APP_KEY&amp;gt;&#39;, &#39;appSecret&#39; =&amp;gt; &#39;&amp;lt;APP_SECRET&amp;gt;&#39;, ] ]  Yii Advanced Add Shieldfy DB listener Add shieldfy attachPDO to this file common/config/main-local.</description>
+Add Shieldfy Component &#39;bootstrap&#39; =&amp;gt; [&#39;shieldfy&#39;], &#39;components&#39; =&amp;gt; [ ... &#39;shieldfy&#39; =&amp;gt; [ &#39;class&#39; =&amp;gt; &#39;Shieldfy\Extensions\Yii\BootstrapLoader&#39;, &#39;appKey&#39; =&amp;gt; &#39;&amp;lt;APP_KEY&amp;gt;&#39;, &#39;appSecret&#39; =&amp;gt; &#39;&amp;lt;APP_SECRET&amp;gt;&#39;, ], ... ]  Add Shieldfy DB listener If you use Yii2 Basic. add shieldfy attachPDO to this file config/db.</description>
     </item>
     
     <item>
